@@ -1,0 +1,390 @@
+
+body{
+    margin: 0;
+    /* min-height: 100vh; */
+    width: 100%;
+    background-image: url(../assets/images/bball_court.jpg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
+  }
+  
+  .loading-container{
+    margin: 0;
+     position: absolute;
+     top: 50%;
+     left: 51%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+  }
+  
+  .loading-text {
+    text-align: center;
+    margin-top: 0;
+    font-size: 2.5rem;
+    color: black;
+  }
+  
+  /* 100vh below so can align-items: center, hopefully it doesn't mess anything up later  */
+  .cards-container { 
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    justify-content: space-around;
+    overflow: auto;
+    
+  }
+  
+  .basketball-container {
+   width: 150px;
+   margin: 0;
+    position: absolute;
+    top: 42%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }
+  
+  /* last three lines to but glow around bball */
+  .basketball {
+    width:100%;
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0px 0px 9px 4px white;
+    animation: glow 1s linear infinite alternate;
+  }
+  
+  .basketball:active {
+    transform: translateY(10px);
+  }
+  
+  @keyframes glow{
+    to {
+      box-shadow: 0px 0px 18px 12px white }
+  }
+  
+  
+  
+  .name-container {
+    position: absolute;
+    width: 295px;
+    height: 22px;
+    top: 32px;
+    left: 30px;
+    padding-left: 5px;
+  }
+  
+  .year {
+      float: right;
+      padding-right: 15px;
+  }
+  
+  .player-image-container {
+    position: absolute;
+    height: 213px;
+    width: 290.6px;
+    top: 59px;
+    left: 29px;
+  }
+  
+  .player-image {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .stats {
+      position: absolute;
+      width: 290.6px;
+      height: 137px;
+      top: 307px;
+      left: 40px;
+  }
+  
+  .stats-paragraph {
+    margin: 13px 15px;
+    margin-left: 25px;
+    width: 30%;
+    
+  }
+  
+  /* adding hover description of stats */
+  .stats-hover {
+    width: 130px;
+    font-weight: bold;
+  }
+  
+  .stats-paragraph.left.PPG .stats-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.left.PPG:hover .stats-before-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.left.PPG:hover .stats-hover {
+    display: inline-block;
+    background-color: #EAEBE4;
+    color:  rgb(163, 119, 6);
+    padding: 1px 0;
+  }
+  
+  .stats-paragraph.left.TSP .stats-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.left.TSP:hover .stats-before-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.left.TSP:hover .stats-hover {
+    display: inline-block;
+    background-color: #EAEBE4;
+    color:  rgb(163, 119, 6);
+    padding: 1px 0;
+  }
+  
+  .stats-paragraph.left.APG .stats-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.left.APG:hover .stats-before-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.left.APG:hover .stats-hover {
+    display: inline-block;
+    background-color: #EAEBE4;
+    color:  rgb(163, 119, 6);
+    width: 120px;
+   
+  }
+  
+  .stats-paragraph.left.RPG .stats-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.left.RPG:hover .stats-before-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.left.RPG:hover .stats-hover {
+    display: inline-block;
+    background-color: #EAEBE4;
+    color:  rgb(163, 119, 6);
+    width: 145px;
+    
+  }
+  
+  .stats-paragraph.right.BPG .stats-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.right.BPG:hover .stats-before-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.right.BPG:hover .stats-hover {
+    display: inline-block;
+    background-color: #EAEBE4;
+    color:  rgb(163, 119, 6);
+    width: 120px;
+    
+  }
+  
+  .stats-paragraph.right.SPG .stats-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.right.SPG:hover .stats-before-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.right.SPG:hover .stats-hover {
+    display: inline-block;
+    background-color: #EAEBE4;
+    color:  rgb(163, 119, 6);
+    width: 120px;
+  }
+  
+  .stats-paragraph.right.TPG .stats-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.right.TPG:hover .stats-before-hover {
+    display: none;
+  }
+  
+  .stats-paragraph.right.TPG:hover .stats-hover {
+    display: inline-block;
+    background-color: #EAEBE4;
+    color:  rgb(163, 119, 6);
+    width: 75px;
+  }
+  
+  
+  
+  
+  /* animation for stats comparisons */
+  .animation {
+    background-color: gold;
+    border: dotted 1px black;
+    animation: blinkingBackground 2s;
+    animation-iteration-count: 1.5;
+  }
+  
+  .animation:hover {
+    border: none;
+  }
+  
+  @keyframes blinkingBackground{
+    0%		{ background-color: gold;}
+    25%		{ background-color: transparent;}
+    50%		{ background-color: gold;}
+    75%		{ background-color: transparent;}
+    100%	        { background-color: gold;}
+  }
+  
+  .stats-right-container {
+      float: right;
+      position: absolute;
+      top: 0;
+      right: 15%;
+      width: 50%;
+  }
+  
+  .stats-paragraph.right {
+    width: 50%;
+    margin-left: 50px;
+  }
+  
+  .customAlert{
+    /* overflow: visible; */
+    
+    display: none;
+    position: fixed;
+    max-width: 450px;
+    min-width: 420px !important;
+    min-height: 45%;
+    height: 250px;
+    left: 48%;
+    top: 8.2%;
+    /* padding: 10px; */
+    box-sizing: border-box;
+    margin-left: -12.5%;
+    margin-top: -5.2%;
+    background-image: url(../assets/images/nba-scoreboard.png);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: Codystar;
+    font-weight: bolder;
+    z-index: 1;
+    /* border: 3px red solid; */
+    /* box-shadow: 10px 15px 10px -15px #111;  */
+  }
+  
+  .message-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 22.5%;
+    top: 15%;
+    max-width: 240px;
+    min-width: 240px !important;
+    min-height: 155px;
+    height: 155px;
+  }
+  
+  .message {
+    /* margin-top: 53px; */
+    /* max-width: 90%; */
+    /* position: absolute; */
+    /* left: 23.5%; */
+    animation: blinkingText 1s 3;
+  }
+  
+  @keyframes blinkingText{
+    40%{		color:white;	}
+    /* 49%{	color: white;	} */
+    50%{	color: transparent;	}
+    /* 99%{	color: white;	} */
+      /* 100%{	color: white;	} */
+  }
+    
+    /* @media all and (max-width: 1300px){ this stuff came with the customAlert 
+      .message{
+        font-size: 14px !important;
+      }
+      input[type='button']{
+        height: 15% !important;
+      }
+    } */
+    
+    /* .message{
+      padding: 5px;
+      color: white;
+      font-size: 14px;
+      line-height: 20px;
+      text-align: justify;
+    } */
+      
+    .confirmButton {
+      /* margin-top: 3rem; */
+      position: absolute;
+      left: 39%;
+      top: 70%;
+      background: none;
+      /* color: white;
+      /* color: tomato; */
+      font-family: Codystar; 
+      /* keeping font properties even though can't see text because it helps with sizing of button */
+      font-weight: bolder;
+      font-size: 1.5rem;
+      padding: .75em 2em;
+      border: none;
+      cursor: pointer;
+      z-index: 2;
+    }
+   
+        
+  @keyframes fadeOut{
+      from{
+        opacity: 1;
+    } 
+    to{
+      opacity: 0;
+    }
+  }
+      
+  @keyframes fadeIn{
+      from{
+        opacity: 0;
+    } 
+    to{
+      opacity: 1;
+    }
+  }
+  
+  .score-left,
+  .score-right {
+    position: absolute;
+    /* width: 88px;
+    height: 62px; */
+    top: 69.5%;
+    color: red;
+    font-size: 3.75rem;
+  }
+  
+  .score-left {
+    left: 21%;
+  }
+  
+  .score-right {
+    left: 68%;
+    /* top: 46%; */
+  }
