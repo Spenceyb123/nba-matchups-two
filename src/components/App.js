@@ -7,7 +7,7 @@ import BasketballButton from "../assets/images/basketball-button.png";
 import PlayerCard from './PlayerCard';
 
 //working on
-//1. parseFloat to get text content as integer 
+//1. put text content into stats so comparison variables can read 
 //2. then bball button comparisons / yellow animation 
 
 class App extends React.Component {
@@ -58,10 +58,9 @@ class App extends React.Component {
         // let test = document.getElementsByClassName("stats-paragraph left PPG")[1].textContent;
         // console.log(parseFloat(test.match(/[0-9|.]/g).join('')));
 
-        //below line working to convert stat to number to be compared================
+        //below line working to convert stat to number to be compared================ paste this in below 
         console.log(parseFloat(document.getElementsByClassName("stats-paragraph left PPG")[1].textContent.match(/[0-9|.]/g).join('')));
 
-        console.log(parseFloat(document.getElementsByClassName("stats-paragraph left PPG")[1].textContent));
         // const randomStat = Math.floor(Math.random() * statsArrayRandom.length);
         // document.getElementsByClassName("name-container").value; // pending....
 
@@ -72,229 +71,232 @@ class App extends React.Component {
     //     } 
           
            
-    //           if(random !== undefined || randomTwo !== undefined){
+            //   if(random !== undefined || randomTwo !== undefined){
                   
-    //               const statsArrayRandom = [];
-    //               const randomPPG = this.state.data[random].PTS;
-    //               const randomTSP = this.state.data[random].TSP;
-    //               const randomAPG = this.state.data[random].AST;
-    //               const randomRPG = this.state.data[random].TRB;
-    //               const randomBPG = this.state.data[random].BLK;
-    //               const randomSPG = this.state.data[random].STL;
-    //               const randomTPG = this.state.data[random].TOV;
-    //               statsArrayRandom.push(randomPPG, randomTSP, randomAPG, randomRPG, randomBPG, randomSPG, randomTPG);
+                  const statsArrayRandom = [];
+                  const randomPPG = parseFloat(document.getElementsByClassName("stats-paragraph left PPG")[0].textContent.match(/[0-9|.]/g).join('')); 
+                  const randomTSP = parseFloat(document.getElementsByClassName("stats-paragraph left TSP")[0].textContent.match(/[0-9|.]/g).join(''));  
+                  const randomAPG = parseFloat(document.getElementsByClassName("stats-paragraph left APG")[0].textContent.match(/[0-9|.]/g).join(''));
+                  const randomRPG = parseFloat(document.getElementsByClassName("stats-paragraph left RPG")[0].textContent.match(/[0-9|.]/g).join(''));
+                  const randomBPG = parseFloat(document.getElementsByClassName("stats-paragraph right BPG")[0].textContent.match(/[0-9|.]/g).join(''));
+                  const randomSPG = parseFloat(document.getElementsByClassName("stats-paragraph right SPG")[0].textContent.match(/[0-9|.]/g).join(''));
+                  const randomTPG = parseFloat(document.getElementsByClassName("stats-paragraph right TPG")[0].textContent.match(/[0-9|.]/g).join(''));
+                  statsArrayRandom.push(randomPPG, randomTSP, randomAPG, randomRPG, randomBPG, randomSPG, randomTPG);
       
-    //               const statsArrayRandomTwo = [];
-    //               const randomTwoPPG = this.state.data[randomTwo].PTS;
-    //               const randomTwoTSP = this.state.data[randomTwo].TSP;
-    //               const randomTwoAPG = this.state.data[randomTwo].AST;
-    //               const randomTwoRPG = this.state.data[randomTwo].TRB;
-    //               const randomTwoBPG = this.state.data[randomTwo].BLK;
-    //               const randomTwoSPG = this.state.data[randomTwo].STL;
-    //               const randomTwoTPG = this.state.data[randomTwo].TOV;
-    //               statsArrayRandomTwo.push(randomTwoPPG, randomTwoTSP, randomTwoAPG, randomTwoRPG, randomTwoBPG, randomTwoSPG, randomTwoTPG);
-      
-    //               const randomStat = Math.floor(Math.random() * statsArrayRandom.length);
-                  
-    //               // console.log(statsArrayRandom, statsArrayRandomTwo);
                  
+                  const statsArrayRandomTwo = [];
+                  const randomTwoPPG = parseFloat(document.getElementsByClassName("stats-paragraph left PPG")[1].textContent.match(/[0-9|.]/g).join('')); 
+                  const randomTwoTSP = parseFloat(document.getElementsByClassName("stats-paragraph left TSP")[1].textContent.match(/[0-9|.]/g).join(''));  
+                  const randomTwoAPG = parseFloat(document.getElementsByClassName("stats-paragraph left APG")[1].textContent.match(/[0-9|.]/g).join(''));
+                  const randomTwoRPG = parseFloat(document.getElementsByClassName("stats-paragraph left RPG")[1].textContent.match(/[0-9|.]/g).join(''));
+                  const randomTwoBPG = parseFloat(document.getElementsByClassName("stats-paragraph right BPG")[1].textContent.match(/[0-9|.]/g).join(''));
+                  const randomTwoSPG = parseFloat(document.getElementsByClassName("stats-paragraph right SPG")[1].textContent.match(/[0-9|.]/g).join(''));
+                  const randomTwoTPG = parseFloat(document.getElementsByClassName("stats-paragraph right TPG")[1].textContent.match(/[0-9|.]/g).join(''));
+                  statsArrayRandomTwo.push(randomTwoPPG, randomTwoTSP, randomTwoAPG, randomTwoRPG, randomTwoBPG, randomTwoSPG, randomTwoTPG);
       
-    //               if(randomStat === 0 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
-    //                   // this.setState({countLeft: +1}); causes to rerender :(
-    //                   (() => {
+                  const randomStat = Math.floor(Math.random() * statsArrayRandom.length); 
+                 
+
+                  let playerOne = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
+                  let playerTwo = document.getElementsByClassName("name-container")[1].childNodes[0].textContent;
+
+                  
+                  if(randomStat === 0 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
+                      // this.setState({countLeft: +1}); causes to rerender :(
+                      (() => {
                       
-    //                       let ppg =  document.getElementsByClassName("stats-paragraph left PPG"); 
+                          let ppg =  document.getElementsByClassName("stats-paragraph left PPG"); 
                           
-    //                       for (const p of ppg) {
-    //                           p.classList.add("animation");
-    //                         }
+                          for (const p of ppg) {
+                              p.classList.add("animation");
+                            }
                           
-    //                   })();
+                      })();
            
-    //                   alert(random.Player + " gets by " + randomTwo.Player + " for the bucket!");
+                      alert(playerOne + " gets by " + playerTwo + " for the bucket!");
                     
                       
-    //               } else if (randomStat === 0 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
-    //                   // this.setState({countRight: +1});
-    //                   (() => {
+                  } else if (randomStat === 0 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
+                      // this.setState({countRight: +1});
+                      (() => {
                           
-    //                       let ppg =  document.getElementsByClassName("stats-paragraph left PPG");
+                          let ppg =  document.getElementsByClassName("stats-paragraph left PPG");
                 
-    //                       for (const p of ppg) {
-    //                           p.classList.add("animation");
-    //                         }
+                          for (const p of ppg) {
+                              p.classList.add("animation");
+                            }
       
-    //                   })();
+                      })();
                       
-    //                   alert(randomTwo.Player + " gets by " + random.Player + " for the bucket!");
-                      
-      
-    //               } else if (randomStat === 1 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let tsp =  document.getElementsByClassName("stats-paragraph left TSP");
-    //                       //started keeping variable names same when copying and pastying since local scope 
-    //                       for (const t of tsp) {
-    //                           t.classList.add("animation");
-    //                         }
-                          
-    //                   })();
-                      
-    //                   alert(random.Player + " is money!");
+                      alert(playerTwo + " gets by " + playerOne + " for the bucket!");
                       
       
-    //               } else if (randomStat === 1 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let tsp =  document.getElementsByClassName("stats-paragraph left TSP");
+                  } else if (randomStat === 1 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let tsp =  document.getElementsByClassName("stats-paragraph left TSP");
+                          //started keeping variable names same when copying and pastying since local scope 
+                          for (const t of tsp) {
+                              t.classList.add("animation");
+                            }
                           
-    //                       for (const t of tsp) {
-    //                           t.classList.add("animation");
-    //                         }
+                      })();
+                      
+                      alert(playerOne + " is money!");
+                      
+      
+                  } else if (randomStat === 1 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let tsp =  document.getElementsByClassName("stats-paragraph left TSP");
                           
-    //                   })();
+                          for (const t of tsp) {
+                              t.classList.add("animation");
+                            }
+                          
+                      })();
                      
-    //                   alert(randomTwo.Player + " is money!");
+                      alert(playerTwo + " is money!");
                       
       
-    //               } else if (randomStat === 2 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let tsp =  document.getElementsByClassName("stats-paragraph left APG");
+                  } else if (randomStat === 2 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let tsp =  document.getElementsByClassName("stats-paragraph left APG");
                           
-    //                       for (const t of tsp) {
-    //                           t.classList.add("animation");
-    //                         }
+                          for (const t of tsp) {
+                              t.classList.add("animation");
+                            }
                           
-    //                   })();
+                      })();
                       
-    //                   alert(random.Player + " makes " + randomTwo.Player + "'s head spin with the dime!");
+                      alert(playerOne + " makes " + playerTwo + "'s head spin with the dime!");
                       
       
-    //               } else if (randomStat === 2 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let tsp =  document.getElementsByClassName("stats-paragraph left APG");
+                  } else if (randomStat === 2 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let tsp =  document.getElementsByClassName("stats-paragraph left APG");
                           
-    //                       for (const t of tsp) {
-    //                           t.classList.add("animation");
-    //                         }
+                          for (const t of tsp) {
+                              t.classList.add("animation");
+                            }
                           
-    //                   })();
+                      })();
                      
-    //                   alert(randomTwo.Player + " makes " + random.Player + "'s head spin with the dime!");
+                      alert(playerTwo + " makes " + playerOne + "'s head spin with the dime!");
                       
-    //               } else if (randomStat === 3 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let tsp =  document.getElementsByClassName("stats-paragraph left RPG");
+                  } else if (randomStat === 3 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let tsp =  document.getElementsByClassName("stats-paragraph left RPG");
                           
-    //                       for (const t of tsp) {
-    //                           t.classList.add("animation");
-    //                         }
+                          for (const t of tsp) {
+                              t.classList.add("animation");
+                            }
                           
-    //                   })();
+                      })();
                       
-    //                   alert(random.Player + " secures the rebound!");
-                     
-      
-    //               } else if (randomStat === 3 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let tsp =  document.getElementsByClassName("stats-paragraph left RPG");
-                          
-    //                       for (const t of tsp) {
-    //                           t.classList.add("animation");
-    //                         }
-                          
-    //                   })();
-                     
-    //                   alert(randomTwo.Player + " secures the rebound!");
-                      
-      
-    //               } else if (randomStat === 4 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let bpg =  document.getElementsByClassName("stats-paragraph right BPG");
-                          
-    //                       for (const b of bpg) {
-    //                           b.classList.add("animation");
-    //                         }
-                          
-    //                   })();
-                      
-    //                   alert(random.Player + " swats " + randomTwo.Player + "!");
-                      
-      
-    //               } else if (randomStat === 4 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let bpg =  document.getElementsByClassName("stats-paragraph right BPG");
-      
-    //                       for (const b of bpg) {
-    //                           b.classList.add("animation");
-    //                         }
-                          
-    //                   })();
-                      
-    //                   alert(randomTwo.Player + " swats " + random.Player + "!");
+                      alert(playerOne + " secures the rebound!");
                      
       
-    //               } else if (randomStat === 5 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let bpg =  document.getElementsByClassName("stats-paragraph right SPG");
-      
-    //                       for (const b of bpg) {
-    //                           b.classList.add("animation");
-    //                         }
+                  } else if (randomStat === 3 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let tsp =  document.getElementsByClassName("stats-paragraph left RPG");
                           
-    //                   })();
-                      
-    //                   alert(random.Player + " picks " + randomTwo.Player + "'s pocket!");
-                      
-      
-    //               } else if (randomStat === 5 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let bpg =  document.getElementsByClassName("stats-paragraph right SPG");
-      
-    //                       for (const b of bpg) {
-    //                           b.classList.add("animation");
-    //                         }
+                          for (const t of tsp) {
+                              t.classList.add("animation");
+                            }
                           
-    //                   })();
+                      })();
+                     
+                      alert(playerTwo + " secures the rebound!");
+                      
+      
+                  } else if (randomStat === 4 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let bpg =  document.getElementsByClassName("stats-paragraph right BPG");
+                          
+                          for (const b of bpg) {
+                              b.classList.add("animation");
+                            }
+                          
+                      })();
+                      
+                      alert(playerOne + " swats " + playerTwo + "!");
+                      
+      
+                  } else if (randomStat === 4 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let bpg =  document.getElementsByClassName("stats-paragraph right BPG");
+      
+                          for (const b of bpg) {
+                              b.classList.add("animation");
+                            }
+                          
+                      })();
+                      
+                      alert(playerTwo + " swats " + playerOne + "!");
+                     
+      
+                  } else if (randomStat === 5 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let bpg =  document.getElementsByClassName("stats-paragraph right SPG");
+      
+                          for (const b of bpg) {
+                              b.classList.add("animation");
+                            }
+                          
+                      })();
+                      
+                      alert(playerOne + " picks " + playerTwo + "'s pocket!");
+                      
+      
+                  } else if (randomStat === 5 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let bpg =  document.getElementsByClassName("stats-paragraph right SPG");
+      
+                          for (const b of bpg) {
+                              b.classList.add("animation");
+                            }
+                          
+                      })();
             
-    //                   alert(randomTwo.Player + " picks " + random.Player + "'s pocket!");
+                      alert(playerTwo + " picks " + playerOne + "'s pocket!");
                       
       
-    //               } else if (randomStat === 6 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let bpg =  document.getElementsByClassName("stats-paragraph right TPG");
+                  } else if (randomStat === 6 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let bpg =  document.getElementsByClassName("stats-paragraph right TPG");
       
-    //                       for (const b of bpg) {
-    //                           b.classList.add("animation");
-    //                         }
+                          for (const b of bpg) {
+                              b.classList.add("animation");
+                            }
                           
-    //                   })();
+                      })();
                       
-    //                   alert(randomTwo.Player + " turns the ball over... that's embarrassing");
+                      alert(playerOne + " turns the ball over... that's embarrassing");
                       
       
-    //               } else if (randomStat === 6 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
-    //                   (() => {
-    //                       let bpg =  document.getElementsByClassName("stats-paragraph right TPG");
+                  } else if (randomStat === 6 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
+                      (() => {
+                          let bpg =  document.getElementsByClassName("stats-paragraph right TPG");
       
-    //                       for (const b of bpg) {
-    //                           b.classList.add("animation");
-    //                         }
+                          for (const b of bpg) {
+                              b.classList.add("animation");
+                            }
                           
-    //                   })();
+                      })();
                       
-    //                   alert(random.Player + " turns the ball over... that's embarrassing");
+                      alert(playerOne + " turns the ball over... that's embarrassing");
                       
       
-    //               }
+                  }
       
-    //           }
+            //   }
              
-      
-    //     // let statsParagraphElements = document.querySelectorAll(".stats-paragraph");
-    //     // (function _removeClasses() {
-    //     //   for (var i = 0; i < statsParagraphElements.length; i++) {
-    //     //     statsParagraphElements[i].classList.remove('animation')
-    //     //   }
-    //     // }());
+      // below gonna end up going with alert click probably============
+        // let statsParagraphElements = document.querySelectorAll(".stats-paragraph");
+        // (function _removeClasses() {
+        //   for (var i = 0; i < statsParagraphElements.length; i++) {
+        //     statsParagraphElements[i].classList.remove('animation')
+        //   }
+        // }());
       }
 
       render() {

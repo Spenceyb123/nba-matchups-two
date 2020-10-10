@@ -62,7 +62,9 @@ class PlayerCard extends React.Component {
         render(){
             let jordanKobeInitial = 0; // if less 1, have kobe and jordan(?)
             console.log("PlayerCard render");
+            
             const { data, jordanKobe, random } = this.props;
+            console.log(data);
             
 
          
@@ -75,8 +77,7 @@ class PlayerCard extends React.Component {
                 <div className="mtg-card-container">
                     <img className="MTG-card" src={MTGCard} alt="player card"/>
                     
-            {/* <div>{this.props.children}</div> */}
-            <div className="name-container">{jordanKobeInitial < 1 ? jordanKobe.Player : data[random].Player}<span className="year"></span></div>
+            <div className="name-container">{jordanKobeInitial < 1 ? jordanKobe.Player : data[random].Player}<span className="year">{jordanKobeInitial < 1 ? jordanKobe.Season : data[random].Season}</span></div>
                     <div className="player-image-container">
                         <img className="player-image"  />
                     </div>
@@ -86,30 +87,30 @@ class PlayerCard extends React.Component {
                           <span className="stats-hover">Points Per Game</span>
                           </p>
                         <p className="stats-paragraph left TSP">
-                          <span className="stats-before-hover">TSP: </span>
+                          <span className="stats-before-hover">TSP: {jordanKobeInitial < 1 ? (jordanKobe.TSP * 100).toFixed(1) + "%" : (data[random].TSP * 100).toFixed(1) + "%"}</span>
     
                           <span className="stats-hover">True Shooting %</span>
                           </p>
                         <p className="stats-paragraph left APG">
-                          <span className="stats-before-hover">APG: </span>
+                          <span className="stats-before-hover">APG: {jordanKobeInitial < 1 ? jordanKobe.AST : data[random].AST}</span>
                           <span className="stats-hover">Assists Per Game</span>
                           </p>
                         <p className="stats-paragraph left RPG">
-                          <span className="stats-before-hover">RPG: </span>
+                          <span className="stats-before-hover">RPG: {jordanKobeInitial < 1 ? jordanKobe.TRB : data[random].TRB}</span>
                           <span className="stats-hover">Rebounds Per Game</span>
                           </p>
     
                         <div className="stats-right-container">
                         <p className="stats-paragraph right BPG">
-                          <span className="stats-before-hover">BPG: </span>
+                          <span className="stats-before-hover">BPG: {jordanKobeInitial < 1 ? jordanKobe.BLK : data[random].BLK}</span>
                           <span className="stats-hover">Blocks Per Game</span>
                           </p>
                         <p className="stats-paragraph right SPG">
-                          <span className="stats-before-hover">SPG: </span>
+                          <span className="stats-before-hover">SPG: {jordanKobeInitial < 1 ? jordanKobe.STL : data[random].STL}</span>
                           <span className="stats-hover">Steals Per Game</span>
                           </p>
                         <p className="stats-paragraph right TPG">
-                          <span className="stats-before-hover">TPG: </span>
+                          <span className="stats-before-hover">TPG: {jordanKobeInitial < 1 ? jordanKobe.TOV : data[random].TOV}</span>
                           <span className="stats-hover">Turnovers Per Game</span>
                           </p>
                         </div>
