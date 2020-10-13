@@ -2,11 +2,7 @@ import React from 'react';
 import './ArenaMonitor.css';
 class ArenaMonitor extends React.Component {
 
-    // state = {
-    //     leftCount : 0,
-    //     rightCount : 0
-    // };
-
+   
     render () {
         //come back to this message? =====================
         console.log(this.props.message);

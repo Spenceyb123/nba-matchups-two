@@ -26,12 +26,31 @@ class PlayerCard extends React.Component {
           shouldComponentUpdate(nextProps, nextState) {
             // Only update if bricks change
             // console.log("I DID", nextProps);
-            if(this.props.bballNewPlayers == true) {
-                console.log("I UPDATE", this.props.bballNewPlayers, this.props.jordanKobeInitial);
+            // if(this.props.bballNewPlayers == true) {
+            //     console.log("I UPDATE", this.props.bballNewPlayers, this.props.jordanKobeInitial);
+            //     return true;
+            // } 
+            // console.log(this.props.random);
+            // console.log(this.props.bballNewPlayers, this.props.jordanKobeInitial);
+            // return false;
+
+            if( this.props.jordanKobeInitial <1 && this.props.bballNewPlayers == true ) {
+                
+                console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers);
+                
                 return true;
-            } 
-            console.log(this.props.random);
-            console.log(this.props.bballNewPlayers, this.props.jordanKobeInitial);
+                
+            } else if (this.props.jordanKobeInitial === 1 && this.props.bballNewPlayers == true) {
+
+                console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers);
+                return true;
+            
+
+             } else if (nextProps.jordanKobeInitial > this.props.jordanKobeInitial) {
+                console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers);
+                return true;
+             }
+            console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers); 
             return false;
           
           }

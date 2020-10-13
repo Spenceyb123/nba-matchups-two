@@ -8,8 +8,7 @@ import PlayerCard from './PlayerCard';
 import AlertMonitor from './ArenaMonitor';
 
 //working on
-//1. why jump ball giving new players? setState? //should only due first time  
-    //==set should component update??
+//1. arena monitor not giving new players first tikme
 //2. if same players, no longer getting new players???? why?????
 //1. alert component(?)
     // -- fade in and out 
@@ -88,6 +87,12 @@ class App extends React.Component {
             } );
             return;
         }
+        // still trying to get playerCard to rerender only if monotir clicked after first bball click
+        if (this.state.bballNewPlayers == false) {
+            this.setState( {bballNewPlayers: true,
+                // jordanKobeInitial: this.state.jordanKobeInitial +1
+            } );
+        }
           
        
 
@@ -122,7 +127,7 @@ class App extends React.Component {
                   statsArrayRandomTwo.push(randomTwoPPG, randomTwoTSP, randomTwoAPG, randomTwoRPG, randomTwoBPG, randomTwoSPG, randomTwoTPG);
       
                   const randomStat = Math.floor(Math.random() * statsArrayRandom.length); 
-                  console.log(randomStat);
+                //   console.log(randomStat);
                  
 
                   let playerOne = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
@@ -399,7 +404,10 @@ class App extends React.Component {
             console.log(document.getElementsByClassName("customAlert")[0].style.display);
             // document.getElementsByClassName("customAlert")[0].style.display = "none";
             document.getElementsByClassName("customAlert")[0].style.display = "none";
-            
+            this.setState( {
+                jordanKobeInitial: this.state.jordanKobeInitial +1
+            } );
+            console.log(this.state.jordanKobeInitial);
 
            
             // this.setState({ data: Images });
@@ -431,7 +439,7 @@ class App extends React.Component {
             <div className="cards-container" tabIndex= "-1">
               
               
-            <PlayerCard jordanKobe={this.state.data[0]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers}/>
+            <PlayerCard jordanKobe={this.state.data[0]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} />
         
   
             <PlayerCard jordanKobe={this.state.data[40]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} /> 
