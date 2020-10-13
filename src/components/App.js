@@ -5,18 +5,35 @@ import importedCsvData from '../assets/players.csv';
 import Images from'../Images';
 import BasketballButton from "../assets/images/basketball-button.png";
 import PlayerCard from './PlayerCard';
+import AlertMonitor from './ArenaMonitor';
 
 //working on
-//1. put text content into stats so comparison variables can read 
-//2. then bball button comparisons / yellow animation 
+//1. why jump ball giving new players? setState? //should only due first time  
+    //==set should component update??
+//2. if same players, no longer getting new players???? why?????
+//1. alert component(?)
+    // -- fade in and out 
+//2. clear yellow on stats when alert clicked (?) 
+//* bball button disapear when alaert pops up 
+//3. add alert for tie if stats the same 
+//4. add something so random players cant be the same 
+//5. areanmonitor scc to center to top 
+
+let message;
 
 class App extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            data: null
-        };
+            data: null,
+            jordanKobeInitial : 0,
+            message: "",
+            countLeft: 0,
+            countRight: 0,
+            //testing below out with playerCard render
+            bballNewPlayers: true   
+         };
     }
 
     componentDidMount() { 
@@ -45,24 +62,34 @@ class App extends React.Component {
             }  
       
          self.setState({ data: Images }); // do I need this with refig????????
-         console.log(data[40]);
          
         }); 
         console.log('mounted');
        
       }
 
+      componentDidUpdate() {
+          console.log("app updated");
+      }
+
+
       handleBasketballButton =  () => {
+          //!!!!!!!!!maybe add state that increments 1 so playercard doesn't rerender through the state pass down as props?????????
         
-        console.log(document.getElementsByClassName("stats-paragraph left PPG")[1].textContent); 
-        // let test = document.getElementsByClassName("stats-paragraph left PPG")[1].textContent;
-        // console.log(parseFloat(test.match(/[0-9|.]/g).join('')));
-
-        //below line working to convert stat to number to be compared================ paste this in below 
-        console.log(parseFloat(document.getElementsByClassName("stats-paragraph left PPG")[1].textContent.match(/[0-9|.]/g).join('')));
-
-        // const randomStat = Math.floor(Math.random() * statsArrayRandom.length);
-        // document.getElementsByClassName("name-container").value; // pending....
+        //   if (this.state.jordanKobeInitial<1) {
+        //       this.setState( {
+        //           jordanKobeInitial : this.state.jordanKobeInitial  +1
+        //       })
+        //       return;
+        //   }
+        if ( this.state.jordanKobeInitial < 1 ) {
+            this.setState( {bballNewPlayers: false,
+                jordanKobeInitial: this.state.jordanKobeInitial +1
+            } );
+            return;
+        }
+          
+       
 
           
     //     if (random === randomTwo) { //so that won't be same two players 
@@ -95,6 +122,7 @@ class App extends React.Component {
                   statsArrayRandomTwo.push(randomTwoPPG, randomTwoTSP, randomTwoAPG, randomTwoRPG, randomTwoBPG, randomTwoSPG, randomTwoTPG);
       
                   const randomStat = Math.floor(Math.random() * statsArrayRandom.length); 
+                  console.log(randomStat);
                  
 
                   let playerOne = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
@@ -102,7 +130,7 @@ class App extends React.Component {
 
                   
                   if(randomStat === 0 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
-                      // this.setState({countLeft: +1}); causes to rerender :(
+                      
                       (() => {
                       
                           let ppg =  document.getElementsByClassName("stats-paragraph left PPG"); 
@@ -113,7 +141,13 @@ class App extends React.Component {
                           
                       })();
            
-                      alert(playerOne + " gets by " + playerTwo + " for the bucket!");
+                   //pass this down to ArenaMonitor?
+                    this.setState( { 
+                        message: playerOne + " gets by " + playerTwo + " for the bucket!",
+                        countLeft: this.state.countLeft + 1
+                     } );
+
+                     document.getElementsByClassName("customAlert")[0].style.display = "block";
                     
                       
                   } else if (randomStat === 0 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
@@ -128,8 +162,13 @@ class App extends React.Component {
       
                       })();
                       
-                      alert(playerTwo + " gets by " + playerOne + " for the bucket!");
-                      
+                    
+                    this.setState( { 
+                        message : playerTwo + " gets by " + playerOne + " for the bucket!",
+                        countRight: this.state.countRight + 1
+                     } );
+                   
+                     document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   } else if (randomStat === 1 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -141,8 +180,13 @@ class App extends React.Component {
                           
                       })();
                       
-                      alert(playerOne + " is money!");
-                      
+
+                      this.setState( { 
+                          message : playerOne + " is money!",
+                          countLeft: this.state.countLeft + 1
+                        } );
+
+                        document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   } else if (randomStat === 1 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -154,7 +198,13 @@ class App extends React.Component {
                           
                       })();
                      
-                      alert(playerTwo + " is money!");
+        
+                    this.setState( { 
+                        message : playerTwo + " is money!",
+                        countRight: this.state.countRight + 1
+                    } );
+
+                    document.getElementsByClassName("customAlert")[0].style.display = "block";
                       
       
                   } else if (randomStat === 2 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
@@ -167,8 +217,13 @@ class App extends React.Component {
                           
                       })();
                       
-                      alert(playerOne + " makes " + playerTwo + "'s head spin with the dime!");
                       
+                      this.setState( {
+                          message : playerOne + " makes " + playerTwo + "'s head spin with the dime!",
+                          countLeft: this.state.countLeft + 1
+                        } );
+
+                        document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   } else if (randomStat === 2 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -180,7 +235,12 @@ class App extends React.Component {
                           
                       })();
                      
-                      alert(playerTwo + " makes " + playerOne + "'s head spin with the dime!");
+                      this.setState( {
+                          message : playerTwo + " makes " + playerOne + "'s head spin with the dime!",
+                          countRight: this.state.countRight + 1
+                        } );
+                      
+                        document.getElementsByClassName("customAlert")[0].style.display = "block";
                       
                   } else if (randomStat === 3 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -192,9 +252,13 @@ class App extends React.Component {
                           
                       })();
                       
-                      alert(playerOne + " secures the rebound!");
+                      this.setState( { 
+                          message : playerOne + " secures the rebound!" ,
+                          countLeft: this.state.countLeft + 1
+                        } );
+                      
+                        document.getElementsByClassName("customAlert")[0].style.display = "block";
                      
-      
                   } else if (randomStat === 3 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
                           let tsp =  document.getElementsByClassName("stats-paragraph left RPG");
@@ -205,8 +269,13 @@ class App extends React.Component {
                           
                       })();
                      
-                      alert(playerTwo + " secures the rebound!");
                       
+                      this.setState( { 
+                          message : playerTwo + " secures the rebound!",
+                          countRight: this.state.countRight + 1
+                         } );
+                      
+                         document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   } else if (randomStat === 4 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -218,7 +287,12 @@ class App extends React.Component {
                           
                       })();
                       
-                      alert(playerOne + " swats " + playerTwo + "!");
+                      this.setState( { 
+                          message : playerOne + " swats " + playerTwo + "!",
+                          countLeft: this.state.countLeft + 1
+                        } );
+
+                        document.getElementsByClassName("customAlert")[0].style.display = "block";
                       
       
                   } else if (randomStat === 4 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
@@ -231,8 +305,12 @@ class App extends React.Component {
                           
                       })();
                       
-                      alert(playerTwo + " swats " + playerOne + "!");
+                      this.setState( {  
+                          message : playerTwo + " swats " + playerOne + "!",
+                          countRight: this.state.countRight + 1
+                         } );
                      
+                         document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   } else if (randomStat === 5 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -244,8 +322,12 @@ class App extends React.Component {
                           
                       })();
                       
-                      alert(playerOne + " picks " + playerTwo + "'s pocket!");
-                      
+                      this.setState( {  
+                          message : playerOne + " picks " + playerTwo + "'s pocket!" ,
+                          countLeft: this.state.countLeft + 1
+                        } );
+
+                        document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   } else if (randomStat === 5 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -257,8 +339,12 @@ class App extends React.Component {
                           
                       })();
             
-                      alert(playerTwo + " picks " + playerOne + "'s pocket!");
-                      
+                      this.setState( {  
+                          message : playerTwo + " picks " + playerOne + "'s pocket!",
+                          countRight: this.state.countRight + 1
+                         } );
+
+                         document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   } else if (randomStat === 6 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -270,8 +356,12 @@ class App extends React.Component {
                           
                       })();
                       
-                      alert(playerOne + " turns the ball over... that's embarrassing");
+                      this.setState( {  
+                          message : playerTwo + " turns the ball over... that's embarrassing" ,
+                          countLeft: this.state.countLeft + 1
+                        } );
                       
+                        document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   } else if (randomStat === 6 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -283,8 +373,12 @@ class App extends React.Component {
                           
                       })();
                       
-                      alert(playerOne + " turns the ball over... that's embarrassing");
+                      this.setState( {  
+                          message : playerOne + " turns the ball over... that's embarrassing",
+                          countRight: this.state.countRight + 1
+                         } );
                       
+                         document.getElementsByClassName("customAlert")[0].style.display = "block";
       
                   }
       
@@ -297,7 +391,19 @@ class App extends React.Component {
         //     statsParagraphElements[i].classList.remove('animation')
         //   }
         // }());
+            
+
       }
+
+      hideMonitor = () => {
+            console.log(document.getElementsByClassName("customAlert")[0].style.display);
+            // document.getElementsByClassName("customAlert")[0].style.display = "none";
+            document.getElementsByClassName("customAlert")[0].style.display = "none";
+            
+
+           
+            // this.setState({ data: Images });
+    }
 
       render() {
         console.log("app render");
@@ -314,9 +420,6 @@ class App extends React.Component {
                  </div>
       }
     
-    
-      // trying to get handlebball button to work to compare stats, just can't figure out how to compare since playercards props identical 
-      //
         return (
           <div className="main-div" tabIndex='-1'> 
      
@@ -328,18 +431,19 @@ class App extends React.Component {
             <div className="cards-container" tabIndex= "-1">
               
               
-            <PlayerCard jordanKobe={this.state.data[0]} data={this.state.data} random={Math.floor(Math.random() * Images.length)} newPlayersOnAlert={this.newPlayersOnAlert} />
+            <PlayerCard jordanKobe={this.state.data[0]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers}/>
         
   
-            <PlayerCard jordanKobe={this.state.data[40]} data={this.state.data} random={Math.floor(Math.random() * Images.length)} newPlayersOnAlert={this.newPlayersOnAlert} /> 
+            <PlayerCard jordanKobe={this.state.data[40]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} /> 
     
            
               
               </div>
-    
-           
+        
+              <AlertMonitor message={this.state.message} countLeft={this.state.countLeft} countRight={this.state.countRight} hideMonitor={this.hideMonitor}/>
+
           </div>
-          
+         
           
         )
         

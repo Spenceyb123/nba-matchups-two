@@ -1,5 +1,4 @@
 import React from 'react';
-// import $ from 'jquery';
 import './PlayerCard.css';
 import MTGCard from "../assets/images/mtg-card.png";
 
@@ -9,59 +8,48 @@ class PlayerCard extends React.Component {
     // constructor(props) {
     //     super(props);
     // }
-        
+    constructor(props) {
+        super(props);
+
+        // this.state = {
+        //     jordanKobeInitial : 0    
+        //  };
+    }
     
     
     
         componentDidMount () {
             console.log('ChildDiv did mount');
-
-            // console.log(document.getElementsByClassName("name-container"));
-
-        //  document.getElementsByClassName("name-container").insertAdjacentHTML('afterbegin', data[0].Player );
-        //  document.getElementsByClassName("year").insertAdjacentHTML('afterbegin', data[0].Season);
-        //  document.getElementsByClassName("player-image").src = data[0].src; //merged Images with data in state
-        //  document.getElementsByClassName("stats-before-hover")[0].insertAdjacentHTML('beforeend', data[0].PTS);
-        //  document.getElementsByClassName("stats-before-hover")[1].insertAdjacentHTML('beforeend', (data[0].TSP * 100).toFixed(1) + "%");
-        //  document.getElementsByClassName("stats-before-hover")[2].insertAdjacentHTML('beforeend', data[0].AST);
-        //  document.getElementsByClassName("stats-before-hover")[3].insertAdjacentHTML('beforeend', data[0].TRB);
-        //  document.getElementsByClassName("stats-before-hover")[4].insertAdjacentHTML('beforeend', data[0].BLK);
-        //  document.getElementsByClassName("stats-before-hover")[5].insertAdjacentHTML('beforeend', data[0].STL);
-        //  document.getElementsByClassName("stats-before-hover")[6].insertAdjacentHTML('beforeend', data[0].TOV);
-      
-        //  //Kobe
-        //  document.getElementsByClassName("name-container").insertAdjacentHTML('afterbegin', data[40].Player );
-        //  document.getElementsByClassName("year").insertAdjacentHTML('afterbegin', data[40].Season);
-        //  document.getElementsByClassName("player-image").src = data[40].src; //merged Images with data in state
-        //  document.getElementsByClassName("stats-before-hover")[7].insertAdjacentHTML('beforeend', data[40].PTS);
-        //  document.getElementsByClassName("stats-before-hover")[8].insertAdjacentHTML('beforeend', (data[40].TSP * 100).toFixed(1) + "%");
-        //  document.getElementsByClassName("stats-before-hover")[9].insertAdjacentHTML('beforeend', data[40].AST);
-        //  document.getElementsByClassName("stats-before-hover")[10].insertAdjacentHTML('beforeend', data[40].TRB);
-        //  document.getElementsByClassName("stats-before-hover")[11].insertAdjacentHTML('beforeend', data[40].BLK);
-        //  document.getElementsByClassName("stats-before-hover")[12].insertAdjacentHTML('beforeend', data[40].STL);
-        //  document.getElementsByClassName("stats-before-hover")[13].insertAdjacentHTML('beforeend', data[40].TOV);
-            // console.log(this.props.data);
            
-            // console.log(data[0].player);
+          }
 
-       
-            // console.log(this.props);
-            // console.log(this.state);
-            // console.log(this.state.countLeft);
-            // console.log(props);
-            
+          shouldComponentUpdate(nextProps, nextState) {
+            // Only update if bricks change
+            // console.log("I DID", nextProps);
+            if(this.props.bballNewPlayers == true) {
+                console.log("I UPDATE", this.props.bballNewPlayers, this.props.jordanKobeInitial);
+                return true;
+            } 
+            console.log(this.props.random);
+            console.log(this.props.bballNewPlayers, this.props.jordanKobeInitial);
+            return false;
+          
           }
     
         componentDidUpdate() {
             // let self = this;
             console.log('PlayerCard Updated');
-         
+            // if (this.state.jordanKobeInitial < 1) {
+            //     this.setState( { jordanKobeInitial : this.state.jordanKobeInitial + 1 });
+            // }
+
         }
+
         
              
         render(){
-            let jordanKobeInitial = 0; // if less 1, have kobe and jordan(?)
-            console.log("PlayerCard render");
+ 
+            console.log("PlayerCard render", this.props.jordanKobeInitial);
             
             const { data, jordanKobe, random } = this.props;
             console.log(data);
@@ -77,40 +65,40 @@ class PlayerCard extends React.Component {
                 <div className="mtg-card-container">
                     <img className="MTG-card" src={MTGCard} alt="player card"/>
                     
-            <div className="name-container">{jordanKobeInitial < 1 ? jordanKobe.Player : data[random].Player}<span className="year">{jordanKobeInitial < 1 ? jordanKobe.Season : data[random].Season}</span></div>
+            <div className="name-container">{this.props.jordanKobeInitial < 1 ? jordanKobe.Player : data[random].Player}<span className="year">{this.props.jordanKobeInitial < 1 ? jordanKobe.Season : data[random].Season}</span></div>
                     <div className="player-image-container">
-                        <img className="player-image"  />
+                        <img className="player-image" src={this.props.jordanKobeInitial < 1 ? jordanKobe.src : data[random].src} alt={this.props.jordanKobeInitial < 1 ? jordanKobe.alt : data[random].alt} />
                     </div>
                     <div className="stats">
                         <p className="stats-paragraph left PPG" >
-                          <span className="stats-before-hover">PPG: {jordanKobeInitial < 1 ? jordanKobe.PTS : data[random].Player} </span>
+                          <span className="stats-before-hover">PPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.PTS : data[random].PTS} </span>
                           <span className="stats-hover">Points Per Game</span>
                           </p>
                         <p className="stats-paragraph left TSP">
-                          <span className="stats-before-hover">TSP: {jordanKobeInitial < 1 ? (jordanKobe.TSP * 100).toFixed(1) + "%" : (data[random].TSP * 100).toFixed(1) + "%"}</span>
+                          <span className="stats-before-hover">TSP: {this.props.jordanKobeInitial < 1 ? (jordanKobe.TSP * 100).toFixed(1) + "%" : (data[random].TSP * 100).toFixed(1) + "%"}</span>
     
                           <span className="stats-hover">True Shooting %</span>
                           </p>
                         <p className="stats-paragraph left APG">
-                          <span className="stats-before-hover">APG: {jordanKobeInitial < 1 ? jordanKobe.AST : data[random].AST}</span>
+                          <span className="stats-before-hover">APG: {this.props.jordanKobeInitial < 1 ? jordanKobe.AST : data[random].AST}</span>
                           <span className="stats-hover">Assists Per Game</span>
                           </p>
                         <p className="stats-paragraph left RPG">
-                          <span className="stats-before-hover">RPG: {jordanKobeInitial < 1 ? jordanKobe.TRB : data[random].TRB}</span>
+                          <span className="stats-before-hover">RPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.TRB : data[random].TRB}</span>
                           <span className="stats-hover">Rebounds Per Game</span>
                           </p>
     
                         <div className="stats-right-container">
                         <p className="stats-paragraph right BPG">
-                          <span className="stats-before-hover">BPG: {jordanKobeInitial < 1 ? jordanKobe.BLK : data[random].BLK}</span>
+                          <span className="stats-before-hover">BPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.BLK : data[random].BLK}</span>
                           <span className="stats-hover">Blocks Per Game</span>
                           </p>
                         <p className="stats-paragraph right SPG">
-                          <span className="stats-before-hover">SPG: {jordanKobeInitial < 1 ? jordanKobe.STL : data[random].STL}</span>
+                          <span className="stats-before-hover">SPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.STL : data[random].STL}</span>
                           <span className="stats-hover">Steals Per Game</span>
                           </p>
                         <p className="stats-paragraph right TPG">
-                          <span className="stats-before-hover">TPG: {jordanKobeInitial < 1 ? jordanKobe.TOV : data[random].TOV}</span>
+                          <span className="stats-before-hover">TPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.TOV : data[random].TOV}</span>
                           <span className="stats-hover">Turnovers Per Game</span>
                           </p>
                         </div>
