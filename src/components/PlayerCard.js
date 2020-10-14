@@ -24,15 +24,6 @@ class PlayerCard extends React.Component {
           }
 
           shouldComponentUpdate(nextProps, nextState) {
-            // Only update if bricks change
-            // console.log("I DID", nextProps);
-            // if(this.props.bballNewPlayers == true) {
-            //     console.log("I UPDATE", this.props.bballNewPlayers, this.props.jordanKobeInitial);
-            //     return true;
-            // } 
-            // console.log(this.props.random);
-            // console.log(this.props.bballNewPlayers, this.props.jordanKobeInitial);
-            // return false;
 
             if( this.props.jordanKobeInitial <1 && this.props.bballNewPlayers == true ) {
                 
@@ -58,9 +49,6 @@ class PlayerCard extends React.Component {
         componentDidUpdate() {
             // let self = this;
             console.log('PlayerCard Updated');
-            // if (this.state.jordanKobeInitial < 1) {
-            //     this.setState( { jordanKobeInitial : this.state.jordanKobeInitial + 1 });
-            // }
 
         }
 

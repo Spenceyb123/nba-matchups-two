@@ -8,11 +8,12 @@ import PlayerCard from './PlayerCard';
 import AlertMonitor from './ArenaMonitor';
 
 //working on
-//1. arena monitor not giving new players first tikme
-//2. if same players, no longer getting new players???? why?????
+//2. if same players, rere3nder
 //1. alert component(?)
-    // -- fade in and out 
-//2. clear yellow on stats when alert clicked (?) 
+    // -- fade in and out with monitor
+    //bball and monitor fade in similtaneously
+        // add function that does both and then call it after stats compare if statement ============
+//3. hide monitor on enter pressed
 //* bball button disapear when alaert pops up 
 //3. add alert for tie if stats the same 
 //4. add something so random players cant be the same 
@@ -70,29 +71,56 @@ class App extends React.Component {
       componentDidUpdate() {
           console.log("app updated");
       }
+      
+      //trying to get this and eventuall show to work============
+      hide = function (elem) {
+
+        // Give the element a height to change from
+        elem.style.height = elem.scrollHeight + 'px';
+    
+        // Set the height back to 0
+        window.setTimeout(function () {
+            elem.style.height = '0';
+        }, 1);
+    
+        // When the transition is complete, hide it
+        window.setTimeout(function () {
+            elem.classList.remove('is-visible');
+        }, 350);
+    
+    };
+    
 
 
       handleBasketballButton =  () => {
-          //!!!!!!!!!maybe add state that increments 1 so playercard doesn't rerender through the state pass down as props?????????
         
-        //   if (this.state.jordanKobeInitial<1) {
-        //       this.setState( {
-        //           jordanKobeInitial : this.state.jordanKobeInitial  +1
-        //       })
-        //       return;
-        //   }
+        // get playerCard to rerender only if monotir clicked after first bball click
+
         if ( this.state.jordanKobeInitial < 1 ) {
             this.setState( {bballNewPlayers: false,
                 jordanKobeInitial: this.state.jordanKobeInitial +1
             } );
             return;
         }
-        // still trying to get playerCard to rerender only if monotir clicked after first bball click
+
         if (this.state.bballNewPlayers == false) {
             this.setState( {bballNewPlayers: true,
-                // jordanKobeInitial: this.state.jordanKobeInitial +1
             } );
         }
+
+        //working on this with hide/show============== trying to figure out timing better 
+        let monitor = document.getElementsByClassName('customAlert')[0];
+        let basketballButton = document.getElementsByClassName('basketball')[0];
+
+        // document.getElementsByClassName('basketball')[0].style.display = "none";
+        // this.hide(document.getElementsByClassName('customAlert')[0]);
+        // document.getElementsByClassName('basketball')[0].classList.add("fade-out");
+        // setTimeout(function(){
+        //     document.getElementsByClassName('basketball')[0].style.display = 'none';
+        //   }, 300);
+
+        basketballButton.style.display = "none";
+        monitor.classList.remove('fade-out');
           
        
 
@@ -133,8 +161,30 @@ class App extends React.Component {
                   let playerOne = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
                   let playerTwo = document.getElementsByClassName("name-container")[1].childNodes[0].textContent;
 
+                  if(statsArrayRandom[randomStat] === statsArrayRandomTwo[randomStat]) {
+                      
+                    (() => {
+                    
+                        let ppg =  document.getElementsByClassName("stats-paragraph left PPG"); 
+                        
+                        for (const p of ppg) {
+                            p.classList.add("animation");
+                          }
+                        
+                    })();
+         
+                 //pass this down to ArenaMonitor?
+                  this.setState( { 
+                      message: "Neither player gains the advantage: Jump Ball!",
+                   } );
+
+                   monitor.classList.add('fade-in');
+                   setTimeout(function(){
+                    monitor.style.display = 'inline';
+                  }, 300); 
                   
-                  if(randomStat === 0 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
+                    
+                } else if(randomStat === 0 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       
                       (() => {
                       
@@ -152,8 +202,10 @@ class App extends React.Component {
                         countLeft: this.state.countLeft + 1
                      } );
 
-                     document.getElementsByClassName("customAlert")[0].style.display = "block";
-                    
+                     monitor.classList.add('fade-in');
+                     setTimeout(function(){
+                        monitor.style.display = 'inline';
+                      }, 300);                     
                       
                   } else if (randomStat === 0 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       // this.setState({countRight: +1});
@@ -173,8 +225,11 @@ class App extends React.Component {
                         countRight: this.state.countRight + 1
                      } );
                    
-                     document.getElementsByClassName("customAlert")[0].style.display = "block";
-      
+                     monitor.classList.add('fade-in');
+                     setTimeout(function(){
+                        monitor.style.display = 'inline';
+                      }, 300); 
+                           
                   } else if (randomStat === 1 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
                           let tsp =  document.getElementsByClassName("stats-paragraph left TSP");
@@ -191,8 +246,11 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
-                        document.getElementsByClassName("customAlert")[0].style.display = "block";
-      
+                        monitor.classList.add('fade-in');
+                        setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
+                        
                   } else if (randomStat === 1 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
                           let tsp =  document.getElementsByClassName("stats-paragraph left TSP");
@@ -209,8 +267,10 @@ class App extends React.Component {
                         countRight: this.state.countRight + 1
                     } );
 
-                    document.getElementsByClassName("customAlert")[0].style.display = "block";
-                      
+                        monitor.classList.add('fade-in');  
+                        setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300);                     
       
                   } else if (randomStat === 2 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -228,7 +288,10 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
-                        document.getElementsByClassName("customAlert")[0].style.display = "block";
+                        monitor.classList.add('fade-in');
+                        setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
       
                   } else if (randomStat === 2 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -245,7 +308,10 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                         } );
                       
-                        document.getElementsByClassName("customAlert")[0].style.display = "block";
+                        monitor.classList.add('fade-in');
+                        setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
                       
                   } else if (randomStat === 3 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -262,7 +328,10 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
                       
-                        document.getElementsByClassName("customAlert")[0].style.display = "block";
+                        monitor.classList.add('fade-in');
+                        setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
                      
                   } else if (randomStat === 3 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -280,7 +349,10 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
                       
-                         document.getElementsByClassName("customAlert")[0].style.display = "block";
+                         monitor.classList.add('fade-in');
+                         setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
       
                   } else if (randomStat === 4 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -297,7 +369,10 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
-                        document.getElementsByClassName("customAlert")[0].style.display = "block";
+                        monitor.classList.add('fade-in');
+                        setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
                       
       
                   } else if (randomStat === 4 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
@@ -315,7 +390,10 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
                      
-                         document.getElementsByClassName("customAlert")[0].style.display = "block";
+                         monitor.classList.add('fade-in');
+                         setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
       
                   } else if (randomStat === 5 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -332,7 +410,10 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
-                        document.getElementsByClassName("customAlert")[0].style.display = "block";
+                        monitor.classList.add('fade-in');
+                        setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
       
                   } else if (randomStat === 5 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -349,7 +430,10 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
 
-                         document.getElementsByClassName("customAlert")[0].style.display = "block";
+                         monitor.classList.add('fade-in');
+                         setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
       
                   } else if (randomStat === 6 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -366,7 +450,10 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
                       
-                        document.getElementsByClassName("customAlert")[0].style.display = "block";
+                        monitor.classList.add('fade-in');
+                        setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
       
                   } else if (randomStat === 6 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -383,34 +470,72 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
                       
-                         document.getElementsByClassName("customAlert")[0].style.display = "block";
+                         monitor.classList.add('fade-in');
+                         setTimeout(function(){
+                            monitor.style.display = 'inline';
+                          }, 300); 
       
                   }
       
             //   }
              
-      // below gonna end up going with alert click probably============
-        // let statsParagraphElements = document.querySelectorAll(".stats-paragraph");
-        // (function _removeClasses() {
-        //   for (var i = 0; i < statsParagraphElements.length; i++) {
-        //     statsParagraphElements[i].classList.remove('animation')
-        //   }
-        // }());
+      
             
 
       }
 
       hideMonitor = () => {
-            console.log(document.getElementsByClassName("customAlert")[0].style.display);
-            // document.getElementsByClassName("customAlert")[0].style.display = "none";
-            document.getElementsByClassName("customAlert")[0].style.display = "none";
+            
             this.setState( {
                 jordanKobeInitial: this.state.jordanKobeInitial +1
             } );
             console.log(this.state.jordanKobeInitial);
 
-           
-            // this.setState({ data: Images });
+            //trying to get monitor to fade in / fade out==================
+        //     document.getElementsByClassName('customAlert')[0].classList.add("fade-out");
+        //     setTimeout(function(){
+        //     document.getElementsByClassName('customAlert')[0].style.display = 'none';
+        //   }, 300);
+
+        //   document.getElementsByClassName('basketball')[0].classList.add("fade-in");
+        //     setTimeout(function(){
+        //     document.getElementsByClassName('customAlert')[0].style.display = 'none';
+        //   }, 300);
+          
+
+
+
+            // below to remove yellow animation on confirmButton click 
+        let statsParagraphElements = document.querySelectorAll(".stats-paragraph");
+        (function _removeClasses() {
+          for (var i = 0; i < statsParagraphElements.length; i++) {
+            statsParagraphElements[i].classList.remove('animation')
+          }
+        }());
+
+        //fade arenaMonitor out
+        let monitor = document.getElementsByClassName('customAlert')[0];
+        let basketballButton = document.getElementsByClassName('basketball')[0];
+
+        monitor.classList.add('fade-out');
+        basketballButton.classList.remove('fade-out');
+        basketballButton.classList.add('fade-in');
+        setTimeout(function(){
+            monitor.style.display = 'none';
+            basketballButton.style.display = 'block';
+          }, 300); 
+
+
+
+        //fade bball button back in
+        
+
+       
+        // setTimeout(function(){
+            
+        //   }, 300);
+
+    
     }
 
       render() {

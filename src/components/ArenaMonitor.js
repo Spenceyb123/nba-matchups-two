@@ -7,7 +7,7 @@ class ArenaMonitor extends React.Component {
         //come back to this message? =====================
         console.log(this.props.message);
         return (
-            <div className='customAlert'  >
+            <div className="customAlert"  >
     <div className="message-container"> 
          <p className='message'>{this.props.message}</p>  
     </div>

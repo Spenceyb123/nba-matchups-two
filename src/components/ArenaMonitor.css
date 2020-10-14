@@ -55,23 +55,6 @@
     /* 99%{	color: white;	} */
       /* 100%{	color: white;	} */
   }
-    
-    /* @media all and (max-width: 1300px){ this stuff came with the customAlert 
-      .message{
-        font-size: 14px !important;
-      }
-      input[type='button']{
-        height: 15% !important;
-      }
-    } */
-    
-    /* .message{
-      padding: 5px;
-      color: white;
-      font-size: 14px;
-      line-height: 20px;
-      text-align: justify;
-    } */
       
     .confirmButton {
       /* margin-top: 3rem; */
@@ -90,25 +73,6 @@
       cursor: pointer;
       z-index: 2;
     }
-   
-        
-  @keyframes fadeOut{
-      from{
-        opacity: 1;
-    } 
-    to{
-      opacity: 0;
-    }
-  }
-      
-  @keyframes fadeIn{
-      from{
-        opacity: 0;
-    } 
-    to{
-      opacity: 1;
-    }
-  }
   
   .score-left,
   .score-right {
@@ -128,3 +92,4 @@
     left: 68%;
     /* top: 46%; */
   }
+
