@@ -8,6 +8,7 @@ import PlayerCard from './PlayerCard';
 import AlertMonitor from './ArenaMonitor';
 
 //working on
+//1.if stat PPG, even if not eqaul, saying equal -- right now it is comparing wrong stat 
 //2. if same players, rere3nder
 //1. alert component(?)
     // -- fade in and out with monitor
@@ -119,7 +120,9 @@ class App extends React.Component {
         //     document.getElementsByClassName('basketball')[0].style.display = 'none';
         //   }, 300);
 
-        basketballButton.style.display = "none";
+
+        //====================================================
+        // basketballButton.style.display = "none";
         monitor.classList.remove('fade-out');
           
        
@@ -156,16 +159,21 @@ class App extends React.Component {
       
                   const randomStat = Math.floor(Math.random() * statsArrayRandom.length); 
                 //   console.log(randomStat);
-                 
+                ///messing around here====================
+                //work up dom to find out what parent of number is?
+                let test = statsArrayRandom[randomStat];
+                console.log(test);
 
                   let playerOne = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
                   let playerTwo = document.getElementsByClassName("name-container")[1].childNodes[0].textContent;
 
                   if(statsArrayRandom[randomStat] === statsArrayRandomTwo[randomStat]) {
-                      
+                      console.log(statsArrayRandom[randomStat]);
                     (() => {
-                    
-                        let ppg =  document.getElementsByClassName("stats-paragraph left PPG"); 
+
+                        //how get animation on matching stat classes? 
+                        
+                        let ppg =  document.getElementsByClassName("stats-paragraph left PPG");     
                         
                         for (const p of ppg) {
                             p.classList.add("animation");
@@ -178,10 +186,13 @@ class App extends React.Component {
                       message: "Neither player gains the advantage: Jump Ball!",
                    } );
 
+
+
+                   basketballButton.style.display = "none";
                    monitor.classList.add('fade-in');
                    setTimeout(function(){
                     monitor.style.display = 'inline';
-                  }, 300); 
+                  }, 50); 
                   
                     
                 } else if(randomStat === 0 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
@@ -202,10 +213,11 @@ class App extends React.Component {
                         countLeft: this.state.countLeft + 1
                      } );
 
+                     basketballButton.style.display = "none";
                      monitor.classList.add('fade-in');
                      setTimeout(function(){
                         monitor.style.display = 'inline';
-                      }, 300);                     
+                      }, 50);                     
                       
                   } else if (randomStat === 0 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       // this.setState({countRight: +1});
@@ -225,10 +237,11 @@ class App extends React.Component {
                         countRight: this.state.countRight + 1
                      } );
                    
+                     basketballButton.style.display = "none";
                      monitor.classList.add('fade-in');
                      setTimeout(function(){
                         monitor.style.display = 'inline';
-                      }, 300); 
+                      }, 50); 
                            
                   } else if (randomStat === 1 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -246,10 +259,11 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
+                        basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
                         
                   } else if (randomStat === 1 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -267,10 +281,11 @@ class App extends React.Component {
                         countRight: this.state.countRight + 1
                     } );
 
+                        basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');  
                         setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300);                     
+                          }, 50);                     
       
                   } else if (randomStat === 2 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -288,10 +303,11 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
+                        basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
       
                   } else if (randomStat === 2 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -308,10 +324,11 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                         } );
                       
+                        basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
                       
                   } else if (randomStat === 3 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -328,10 +345,11 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
                       
+                        basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
                      
                   } else if (randomStat === 3 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -349,10 +367,11 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
                       
+                         basketballButton.style.display = "none";
                          monitor.classList.add('fade-in');
                          setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
       
                   } else if (randomStat === 4 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -369,10 +388,11 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
+                        basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
                       
       
                   } else if (randomStat === 4 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
@@ -390,10 +410,11 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
                      
+                         basketballButton.style.display = "none";
                          monitor.classList.add('fade-in');
                          setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
       
                   } else if (randomStat === 5 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -410,10 +431,11 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
+                        basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
       
                   } else if (randomStat === 5 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -430,10 +452,11 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
 
+                         basketballButton.style.display = "none";
                          monitor.classList.add('fade-in');
                          setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
       
                   } else if (randomStat === 6 && statsArrayRandom[randomStat] < statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -450,10 +473,11 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
                       
+                        basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
       
                   } else if (randomStat === 6 && statsArrayRandom[randomStat] > statsArrayRandomTwo[randomStat]) {
                       (() => {
@@ -470,10 +494,11 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
                       
+                         basketballButton.style.display = "none";
                          monitor.classList.add('fade-in');
                          setTimeout(function(){
                             monitor.style.display = 'inline';
-                          }, 300); 
+                          }, 50); 
       
                   }
       
@@ -523,7 +548,7 @@ class App extends React.Component {
         setTimeout(function(){
             monitor.style.display = 'none';
             basketballButton.style.display = 'block';
-          }, 300); 
+          }, 100); 
 
 
 
