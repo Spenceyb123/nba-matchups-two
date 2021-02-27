@@ -360,3 +360,13 @@ body{
       opacity:0;
   }
 }
+
+/* win and lose popups */
+
+.winnerComponent {
+  display: none;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+}

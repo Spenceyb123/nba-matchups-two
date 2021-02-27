@@ -20,12 +20,16 @@ class PlayerCard extends React.Component {
     
         componentDidMount () {
             console.log('ChildDiv did mount');
-           
+          
           }
 
           shouldComponentUpdate(nextProps, nextState) {
 
-            if( this.props.jordanKobeInitial <1 && this.props.bballNewPlayers == true ) {
+            if(this.props.samePlayers === true) {
+              console.log("same players");
+              return true;
+
+            } else if ( this.props.jordanKobeInitial <1 && this.props.bballNewPlayers == true ) {
                 
                 console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers);
                 

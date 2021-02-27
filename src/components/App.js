@@ -6,19 +6,21 @@ import Images from'../Images';
 import BasketballButton from "../assets/images/basketball-button.png";
 import PlayerCard from './PlayerCard';
 import AlertMonitor from './ArenaMonitor';
+import Winner from "./Winner";
+
 
 //working on
-//1.if stat PPG, even if not eqaul, saying equal -- right now it is comparing wrong stat 
-//2. if same players, rere3nder
+//1.if stat PPG, even if not eqaul, saying equal -- right now it is comparing wrong stat - should be fixed now
+//2. if same players, rere3nder // this should be working, line 82
 //1. alert component(?)
     // -- fade in and out with monitor
     //bball and monitor fade in similtaneously
         // add function that does both and then call it after stats compare if statement ============
 //3. hide monitor on enter pressed
-//* bball button disapear when alaert pops up 
 //3. add alert for tie if stats the same 
 //4. add something so random players cant be the same 
 //5. areanmonitor scc to center to top 
+//6. have jumb ball button say "start" initilly (?)
 
 let message;
 
@@ -30,10 +32,10 @@ class App extends React.Component {
             data: null,
             jordanKobeInitial : 0,
             message: "",
-            countLeft: 0,
+            countLeft: 9,
             countRight: 0,
-            //testing below out with playerCard render
-            bballNewPlayers: true   
+            bballNewPlayers: true, //for jordanKobe
+            samePlayers: false  
          };
     }
 
@@ -62,7 +64,7 @@ class App extends React.Component {
               }
             }  
       
-         self.setState({ data: Images }); // do I need this with refig????????
+         self.setState({ data: Images }); // do I need this with refig???????? YES
          
         }); 
         console.log('mounted');
@@ -71,6 +73,22 @@ class App extends React.Component {
 
       componentDidUpdate() {
           console.log("app updated");
+
+          let playerOneName = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
+          let playerTwoName = document.getElementsByClassName("name-container")[1].childNodes[0].textContent;
+          let playerOneYear = document.getElementsByClassName("year")[0].childNodes[0].textContent;
+          let playerTwoYear = document.getElementsByClassName("year")[1].childNodes[0].textContent;
+
+         
+          //I think below is working so playes not the same?? no, this is infinite looping 
+          if(playerOneName === playerTwoName && playerOneYear === playerTwoYear) {
+            if(playerOneName === playerTwoName && playerOneYear === playerTwoYear) {
+              this.setState({ samePlayers: true }, () => {
+                setTimeout(() => { this.setState({ samePlayers: false }); console.log("testing player match", this.state.samePlayers) }, 200);
+              })
+        };
+            console.log("same same", playerOneName, playerOneYear, playerTwoName, playerTwoYear);
+          }
       }
       
       //trying to get this and eventuall show to work============
@@ -112,6 +130,8 @@ class App extends React.Component {
         //working on this with hide/show============== trying to figure out timing better 
         let monitor = document.getElementsByClassName('customAlert')[0];
         let basketballButton = document.getElementsByClassName('basketball')[0];
+
+        let winner = document.getElementsByClassName('winnerComponent')[0];
 
         // document.getElementsByClassName('basketball')[0].style.display = "none";
         // this.hide(document.getElementsByClassName('customAlert')[0]);
@@ -213,6 +233,13 @@ class App extends React.Component {
                         countLeft: this.state.countLeft + 1
                      } );
 
+                     setTimeout(() => {
+                      if (this.state.countLeft === 10) {
+                        winner.style.display = "block";
+                     }
+                     }, 2000);
+                     
+
                      basketballButton.style.display = "none";
                      monitor.classList.add('fade-in');
                      setTimeout(function(){
@@ -236,7 +263,8 @@ class App extends React.Component {
                         message : playerTwo + " gets by " + playerOne + " for the bucket!",
                         countRight: this.state.countRight + 1
                      } );
-                   
+
+                    
                      basketballButton.style.display = "none";
                      monitor.classList.add('fade-in');
                      setTimeout(function(){
@@ -258,6 +286,12 @@ class App extends React.Component {
                           message : playerOne + " is money!",
                           countLeft: this.state.countLeft + 1
                         } );
+
+                        setTimeout(() => {
+                          if (this.state.countLeft === 10) {
+                            winner.style.display = "block";
+                         }
+                         }, 2000);
 
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -303,6 +337,12 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
+                        setTimeout(() => {
+                          if (this.state.countLeft === 10) {
+                            winner.style.display = "block";
+                         }
+                         }, 2000);
+
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
@@ -344,6 +384,12 @@ class App extends React.Component {
                           message : playerOne + " secures the rebound!" ,
                           countLeft: this.state.countLeft + 1
                         } );
+
+                        setTimeout(() => {
+                          if (this.state.countLeft === 10) {
+                            winner.style.display = "block";
+                         }
+                         }, 2000);
                       
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -388,6 +434,12 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
+                        setTimeout(() => {
+                          if (this.state.countLeft === 10) {
+                            winner.style.display = "block";
+                         }
+                         }, 2000);
+
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
@@ -431,6 +483,12 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
+                        setTimeout(() => {
+                          if (this.state.countLeft === 10) {
+                            winner.style.display = "block";
+                         }
+                         }, 2000);
+
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
@@ -472,6 +530,12 @@ class App extends React.Component {
                           message : playerTwo + " turns the ball over... that's embarrassing" ,
                           countLeft: this.state.countLeft + 1
                         } );
+
+                        setTimeout(() => {
+                          if (this.state.countLeft === 10) {
+                            winner.style.display = "block";
+                         }
+                         }, 2000);
                       
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -579,6 +643,11 @@ class App extends React.Component {
       }
     
         return (
+          <div>
+          <div className="winnerComponent">
+            <Winner  />
+            </div>
+
           <div className="main-div" tabIndex='-1'> 
      
             <div className="basketball-container"> 
@@ -589,16 +658,18 @@ class App extends React.Component {
             <div className="cards-container" tabIndex= "-1">
               
               
-            <PlayerCard jordanKobe={this.state.data[0]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} />
+            <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[0]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} />
         
   
-            <PlayerCard jordanKobe={this.state.data[40]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} /> 
+            <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[40]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} /> 
     
            
               
               </div>
         
               <AlertMonitor message={this.state.message} countLeft={this.state.countLeft} countRight={this.state.countRight} hideMonitor={this.hideMonitor}/>
+
+          </div>
 
           </div>
          
