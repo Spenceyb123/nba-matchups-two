@@ -667,7 +667,9 @@ class App extends React.Component {
               
               </div>
         
+              
               <AlertMonitor message={this.state.message} countLeft={this.state.countLeft} countRight={this.state.countRight} hideMonitor={this.hideMonitor}/>
+             
 
           </div>
 
