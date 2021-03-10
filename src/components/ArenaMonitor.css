@@ -1,27 +1,25 @@
 .customAlert{
-  display: none;
-  position: fixed;
-  max-width: 450px;
-  min-width: 420px;
-  min-height: 45%;
-  height: 250px;
-  
-  top: 2%;
-  left: 50%;
-  transform: translateX(-50%);
-  /* padding: 10px; */
-  box-sizing: border-box;
-  
-  background-image: url(../assets/images/nba-scoreboard.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-  color: white;
-  text-align: center;
-  font-size: 1.5rem;
-  font-family: Codystar;
-  font-weight: bolder;
-  z-index: 1;
+    display: none;
+    position: fixed;
+    /* max-width: 450px; */
+    min-width: 40%;
+    /* min-height: 45%; */
+    height: 55%;
+    top: .1%;
+    left: 50%;
+    transform: translateX(-50%);
+    /* padding: 10px; */
+    box-sizing: border-box;
+    background-image: url(/static/media/nba-scoreboard.85d02692.png);
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+    font-size: 4vh;
+    font-family: Codystar;
+    font-weight: bolder;
+    z-index: 1;
   }
   
   .message-container {
@@ -29,12 +27,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 22.5%;
-    top: 15%;
-    max-width: 240px;
-    min-width: 240px !important;
-    min-height: 155px;
-    height: 155px;
+    left: 10%;
+    top: 5%;
+    max-width: 80%;
+    min-width: 80%;
+    height: 54%;
   }
   
   .message {
@@ -43,6 +40,7 @@
     /* position: absolute; */
     /* left: 23.5%; */
     animation: blinkingText 1s 3;
+    padding: 10%;
   }
   
   @keyframes blinkingText{
@@ -78,11 +76,11 @@
     height: 62px; */
     top: 69.5%;
     color: red;
-    font-size: 3.75rem;
+    font-size: 10vh;
   }
   
   .score-left {
-    left: 21%;
+    left: 18%;
   }
   
   .score-right {
