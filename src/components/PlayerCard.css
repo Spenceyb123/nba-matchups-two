@@ -1,15 +1,25 @@
 
 
 .mtg-card-container {
-    position: relative;
-    width: 351.433px;
-    height: 492px;
+    position: absolute;
+    width: auto;
+    height: 75%;
+    transform: translate(-50%, -50%);
     /* overflow: hidden; */
   }
   
   .MTG-card {
    height: 100%;
   }
+
+  /* media Queries */
+
+@media (max-width: 750px) {
+  .mtg-card-container {
+    height: 85%;
+    
+  }
+}
   
   
   
