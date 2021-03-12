@@ -1,6 +1,6 @@
 .customAlert{
     display: none;
-    position: fixed;
+    position: absolute;
     /* max-width: 450px; */
     min-width: 40%;
     /* min-height: 45%; */
@@ -50,19 +50,29 @@
     /* 99%{	color: white;	} */
       /* 100%{	color: white;	} */
   }
+
+    /* .scores-and-button-container {
+      position: absolute;
+      display: flex;
+      top: 64%;
+      color: red;
+      font-size: 10vh;
+
+    } */
       
     .confirmButton {
       /* margin-top: 3rem; */
       position: absolute;
       left: 39%;
       top: 70%;
+      width: 30%;
       background: none;
       /* color: white;
       /* color: tomato; */
       font-family: Codystar; 
       /* keeping font properties even though can't see text because it helps with sizing of button */
       font-weight: bolder;
-      font-size: 1.5rem;
+      /* font-size: 1.5rem; */
       padding: .75em 2em;
       border: none;
       cursor: pointer;
@@ -71,20 +81,118 @@
   
   .score-left,
   .score-right {
-    position: absolute;
-    /* width: 88px;
-    height: 62px; */
-    top: 69.5%;
+    position: absolute; 
+    width: 88px;
+    height: 62px; 
+    top: 64.5%;
     color: red;
-    font-size: 10vh;
+    font-size: 10vh; 
   }
   
   .score-left {
-    left: 18%;
-  }
+    left: 7%;
+  } 
   
   .score-right {
-    left: 68%;
-    /* top: 46%; */
+    left: 60%;
   }
+
+  
+
+  @media (min-width: 760px) {
+    .score-left,
+    .score-right {
+      width: 88px;
+      height: 62px; 
+      top: 72.5%;
+    }
+    
+    .score-left {
+      left: 12%;
+    } 
+    
+    .score-right {
+      left: 60%;
+    }
+
+    .confirmButton {
+      left: 35%;
+      top: 75%;
+      width: 30%;
+      padding: .75em 2em;
+     
+    }
+  }
+
+  @media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 134/100) {
+    .message-container {
+      font-size: 3vh;
+      left: 10%;
+      top: 5%;
+      max-width: 80%;
+      min-width: 80%;
+      height: 44%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 88px;
+      height: 62px; 
+      top: 48.5%;
+      font-size: 7.5vh;
+    }
+    
+    .score-left {
+      left: 12%;
+    } 
+    
+    .score-right {
+      left: 68%;
+    }
+
+    .confirmButton {
+      left: 35%;
+      top: 47%;
+      width: 30%;
+      padding: 2.5em 2em;
+     
+    }
+  }
+   
+
+  @media (min-aspect-ratio: 155/100) and (max-aspect-ratio: 16/10) {
+    .message-container {
+      font-size: 3.5vh;
+      left: 10%;
+      top: 5%;
+      max-width: 80%;
+      min-width: 80%;
+      height: 52%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 88px;
+      height: 62px; 
+      top: 59.5%;
+      font-size: 8.5vh;
+    }
+    
+    .score-left {
+      left: 16%;
+    } 
+    
+    .score-right {
+      left: 68%;
+    }
+
+    .confirmButton {
+      left: 35%;
+      top: 60%;
+      width: 30%;
+      padding: 2.5em 2em;
+     
+    }
+  }
+  
 
