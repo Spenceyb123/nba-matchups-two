@@ -167,48 +167,13 @@
     }
   }  
 
-  /* @media (min-aspect-ratio: 1775/1000) {
-    .message-container {
-      font-size: 2.8vh;
-      left: 10%;
-      top: 5%;
-      max-width: 80%;
-      min-width: 80%;
-      height: 56%;
-    }
-
-    .score-left,
-    .score-right {
-      width: 26%;
-      height: 21%; 
-      top: 70.5%;
-      font-size: 6.5vh;
-    }
-    
-    .score-left {
-      left: 15%;
-    } 
-    
-    .score-right {
-      left: 65%;
-    }
-
-    .confirmButton {
-      left: 35.5%;
-      top: 60%;
-      width: 30%;
-      padding: 2.5em 2em;
-     
-    }
-  }   */
-
   @media (min-aspect-ratio: 2/1) {
     .message-container {
       font-size: 2.8vh;
-      left: 10%;
+      left: 20%;
       top: 5%;
-      max-width: 80%;
-      min-width: 80%;
+      min-width: 60%;
+      max-width: 60%;
       height: 66%;
     }
 
@@ -230,10 +195,8 @@
 
     .confirmButton {
       left: 35.5%;
-      top: 60%;
+      top: 69%;
       width: 30%;
-      padding: 2.5em 2em;
-     
     }
   }  
 
