@@ -1,30 +1,25 @@
 .customAlert{
-    /* overflow: visible; */
-    
     display: none;
-    position: fixed;
-    max-width: 450px;
-    min-width: 420px !important;
-    min-height: 45%;
-    height: 250px;
-    left: 48%;
-    top: 8.2%;
+    position: absolute;
+    /* max-width: 450px; */
+    min-width: 30%;
+    /* min-height: 45%; */
+    height: 39%;
+    top: .1%;
+    left: 50%;
+    transform: translateX(-50%);
     /* padding: 10px; */
     box-sizing: border-box;
-    margin-left: -12.5%;
-    margin-top: -5.2%;
-    background-image: url(../assets/images/nba-scoreboard.png);
-    background-position: center;
+    background-image: url(/static/media/nba-scoreboard.85d02692.png);
+    background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
     color: white;
     text-align: center;
-    font-size: 1.5rem;
+    font-size: 3vh;
     font-family: Codystar;
     font-weight: bolder;
     z-index: 1;
-    /* border: 3px red solid; */
-    /* box-shadow: 10px 15px 10px -15px #111;  */
   }
   
   .message-container {
@@ -32,12 +27,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    left: 22.5%;
-    top: 15%;
-    max-width: 240px;
-    min-width: 240px !important;
-    min-height: 155px;
-    height: 155px;
+    left: 10%;
+    top: 5%;
+    max-width: 80%;
+    min-width: 80%;
+    height: 62%;
   }
   
   .message {
@@ -46,6 +40,7 @@
     /* position: absolute; */
     /* left: 23.5%; */
     animation: blinkingText 1s 3;
+    padding: 10%;
   }
   
   @keyframes blinkingText{
@@ -55,19 +50,29 @@
     /* 99%{	color: white;	} */
       /* 100%{	color: white;	} */
   }
+
+    /* .scores-and-button-container {
+      position: absolute;
+      display: flex;
+      top: 64%;
+      color: red;
+      font-size: 10vh;
+
+    } */
       
     .confirmButton {
       /* margin-top: 3rem; */
       position: absolute;
-      left: 39%;
+      left: 35.5%;
       top: 70%;
+      width: 30%;
       background: none;
       /* color: white;
       /* color: tomato; */
       font-family: Codystar; 
       /* keeping font properties even though can't see text because it helps with sizing of button */
       font-weight: bolder;
-      font-size: 1.5rem;
+      /* font-size: 1.5rem; */
       padding: .75em 2em;
       border: none;
       cursor: pointer;
@@ -76,20 +81,122 @@
   
   .score-left,
   .score-right {
-    position: absolute;
-    /* width: 88px;
-    height: 62px; */
-    top: 69.5%;
+    position: absolute; 
+    width: 26%;
+    height: 21%; 
+    top: 68.5%;
     color: red;
-    font-size: 3.75rem;
+    font-size: 7vh; 
   }
   
   .score-left {
-    left: 21%;
-  }
+    left: 11%;
+  } 
   
   .score-right {
-    left: 68%;
-    /* top: 46%; */
+    left: 64%;
   }
+
+  @media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 155/100) {
+    .message-container {
+      font-size: 2.4vh;
+      left: 10%;
+      top: 6%;
+      max-width: 80%;
+      min-width: 80%;
+      height: 44%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 26%;
+      height: 21%; 
+      top: 51.5%;
+      font-size: 5vh;
+    }
+    
+    .score-left {
+      left: 10%;
+    } 
+    
+    .score-right {
+      left: 62%;
+    }
+
+    .confirmButton {
+      left: 35%;
+      top: 47%;
+      width: 30%;
+      padding: 2.5em 2em;
+     
+    }
+  }
+  
+ @media (min-aspect-ratio: 155/100) and (max-aspect-ratio: 1675/1000) {
+    .message-container {
+      font-size: 2.8vh;
+      left: 10%;
+      top: 5%;
+      max-width: 80%;
+      min-width: 80%;
+      height: 55%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 26%;
+      height: 21%; 
+      top: 62.5%;
+      font-size: 6.5vh;
+    }
+    
+    .score-left {
+      left: 12%;
+    } 
+    
+    .score-right {
+      left: 65%;
+    }
+
+    .confirmButton {
+      left: 35.5%;
+      top: 60%;
+      width: 30%;
+      padding: 2.5em 2em;
+     
+    }
+  }  
+
+  @media (min-aspect-ratio: 2/1) {
+    .message-container {
+      font-size: 2.8vh;
+      left: 20%;
+      top: 5%;
+      min-width: 60%;
+      max-width: 60%;
+      height: 66%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 26%;
+      height: 21%; 
+      top: 74.5%;
+      font-size: 6.5vh;
+    }
+    
+    .score-left {
+      left: 14%;
+    } 
+    
+    .score-right {
+      left: 61%;
+    }
+
+    .confirmButton {
+      left: 35.5%;
+      top: 69%;
+      width: 30%;
+    }
+  }  
 

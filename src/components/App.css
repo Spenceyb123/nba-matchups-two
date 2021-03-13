@@ -8,6 +8,12 @@ body{
     background-size: 100% 100%;
     
   }
+
+  .main-div {
+    min-width: 100%;
+    height:100%;
+    position: relative;
+  }
   
   .loading-container{
     margin: 0;
@@ -36,18 +42,19 @@ body{
   }
   
   .basketball-container {
-   width: 150px;
+   height: 25%;
    margin: 0;
     position: absolute;
     top: 42%;
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+    z-index: 2;
   }
   
   /* last three lines to put glow around bball */
   .basketball {
-    width:100%;
+    height: 100%;
     cursor: pointer;
     border-radius: 50%;
     box-shadow: 0px 0px 9px 4px white;
@@ -67,12 +74,15 @@ body{
   
   .name-container {
     position: absolute;
-    width: 295px;
-    height: 22px;
-    top: 32px;
-    left: 30px;
-    padding-left: 5px;
-  }
+    width: 84%;
+    height: 5%;
+    top: 6.1%;
+    font-size: 3vh;
+    left: 10%;
+}
+
+
+  
   
   .year {
       float: right;
@@ -81,10 +91,10 @@ body{
   
   .player-image-container {
     position: absolute;
-    height: 213px;
-    width: 290.6px;
-    top: 59px;
-    left: 29px;
+    height: 43.5%;
+    width: 83.05%;
+    top: 12%;
+    left: 8%;
   }
   
   .player-image {
@@ -94,16 +104,16 @@ body{
   }
   
   .stats {
-      position: absolute;
-      width: 290.6px;
-      height: 137px;
-      top: 307px;
-      left: 40px;
+    position: absolute;
+    width: 85%;
+    height: 29%;
+    top: 62%;
+    font-size: 2.2vh;
+    left: 7%;
   }
   
   .stats-paragraph {
-    margin: 13px 15px;
-    margin-left: 25px;
+    margin: 5%;
     width: 30%;
     
   }
@@ -255,7 +265,10 @@ body{
   
   .stats-paragraph.right {
     width: 50%;
-    margin-left: 50px;
+    margin-left: 45%;
+    margin-top: 10%;
+
+
   }
   
   /* to fade in fade out on customAlert and basketball button */
@@ -360,3 +373,21 @@ body{
       opacity:0;
   }
 }
+
+.custom-alert-container {
+  width: 100%;
+}
+
+/* win and lose popups */
+
+.winnerComponent {
+  display: none;
+  width: 100%;
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+}
+
+/* media Queries */
+
+    

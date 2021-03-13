@@ -6,11 +6,9 @@ import Images from'../Images';
 import BasketballButton from "../assets/images/basketball-button.png";
 import PlayerCard from './PlayerCard';
 import AlertMonitor from './ArenaMonitor';
-import Winner from "./Winner";
-
 
 //working on
-//1.if stat PPG, even if not eqaul, saying equal -- right now it is comparing wrong stat - should be fixed now
+//1.if stat PPG, even if not eqaul, saying equal -- right now it is comparing wrong stat 
 //2. if same players, rere3nder // this should be working, line 82
 //1. alert component(?)
     // -- fade in and out with monitor
@@ -32,7 +30,7 @@ class App extends React.Component {
             data: null,
             jordanKobeInitial : 0,
             message: "",
-            countLeft: 9,
+            countLeft: 0,
             countRight: 0,
             bballNewPlayers: true, //for jordanKobe
             samePlayers: false  
@@ -130,8 +128,6 @@ class App extends React.Component {
         //working on this with hide/show============== trying to figure out timing better 
         let monitor = document.getElementsByClassName('customAlert')[0];
         let basketballButton = document.getElementsByClassName('basketball')[0];
-
-        let winner = document.getElementsByClassName('winnerComponent')[0];
 
         // document.getElementsByClassName('basketball')[0].style.display = "none";
         // this.hide(document.getElementsByClassName('customAlert')[0]);
@@ -233,13 +229,6 @@ class App extends React.Component {
                         countLeft: this.state.countLeft + 1
                      } );
 
-                     setTimeout(() => {
-                      if (this.state.countLeft === 10) {
-                        winner.style.display = "block";
-                     }
-                     }, 2000);
-                     
-
                      basketballButton.style.display = "none";
                      monitor.classList.add('fade-in');
                      setTimeout(function(){
@@ -263,8 +252,7 @@ class App extends React.Component {
                         message : playerTwo + " gets by " + playerOne + " for the bucket!",
                         countRight: this.state.countRight + 1
                      } );
-
-                    
+                   
                      basketballButton.style.display = "none";
                      monitor.classList.add('fade-in');
                      setTimeout(function(){
@@ -286,12 +274,6 @@ class App extends React.Component {
                           message : playerOne + " is money!",
                           countLeft: this.state.countLeft + 1
                         } );
-
-                        setTimeout(() => {
-                          if (this.state.countLeft === 10) {
-                            winner.style.display = "block";
-                         }
-                         }, 2000);
 
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -337,12 +319,6 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
-                        setTimeout(() => {
-                          if (this.state.countLeft === 10) {
-                            winner.style.display = "block";
-                         }
-                         }, 2000);
-
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
@@ -384,12 +360,6 @@ class App extends React.Component {
                           message : playerOne + " secures the rebound!" ,
                           countLeft: this.state.countLeft + 1
                         } );
-
-                        setTimeout(() => {
-                          if (this.state.countLeft === 10) {
-                            winner.style.display = "block";
-                         }
-                         }, 2000);
                       
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -434,12 +404,6 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
-                        setTimeout(() => {
-                          if (this.state.countLeft === 10) {
-                            winner.style.display = "block";
-                         }
-                         }, 2000);
-
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
@@ -483,12 +447,6 @@ class App extends React.Component {
                           countLeft: this.state.countLeft + 1
                         } );
 
-                        setTimeout(() => {
-                          if (this.state.countLeft === 10) {
-                            winner.style.display = "block";
-                         }
-                         }, 2000);
-
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
                         setTimeout(function(){
@@ -530,12 +488,6 @@ class App extends React.Component {
                           message : playerTwo + " turns the ball over... that's embarrassing" ,
                           countLeft: this.state.countLeft + 1
                         } );
-
-                        setTimeout(() => {
-                          if (this.state.countLeft === 10) {
-                            winner.style.display = "block";
-                         }
-                         }, 2000);
                       
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -643,11 +595,6 @@ class App extends React.Component {
       }
     
         return (
-          <div>
-          <div className="winnerComponent">
-            <Winner  />
-            </div>
-
           <div className="main-div" tabIndex='-1'> 
      
             <div className="basketball-container"> 
@@ -667,11 +614,7 @@ class App extends React.Component {
               
               </div>
         
-              
               <AlertMonitor message={this.state.message} countLeft={this.state.countLeft} countRight={this.state.countRight} hideMonitor={this.hideMonitor}/>
-             
-
-          </div>
 
           </div>
          

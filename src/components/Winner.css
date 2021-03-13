@@ -1,0 +1,35 @@
+.container {
+    margin: 0 auto;
+    width: 50%;
+    height: 35%;
+    /* background-color: #EDEAD7; */
+    background: radial-gradient(circle, rgba(232,232,223,1) 20%, rgba(237,234,215,1) 70%, rgba(240,237,214,1) 100%); 
+    border: solid 18px black;
+    border-radius: 5%;
+    box-shadow: 10px 10px 40px black;
+    top: 25%;
+    left: 30%;
+    z-index: 2;
+    transform: translateY(50%);
+}
+
+.hell-ya {
+    text-align: center;
+}
+
+.trophy-container {
+    height: 75%;
+    margin: 0 auto;
+}
+
+.trophy {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    
+}
+
+.play-again {
+    display: block;
+    margin: 0 auto;
+}
