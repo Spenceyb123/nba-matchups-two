@@ -6,7 +6,6 @@ body{
     background-image: url(../assets/images/bball_court.jpg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
-    
   }
 
   .main-div {
@@ -38,7 +37,6 @@ body{
     height: 100vh;
     justify-content: space-around;
     overflow: auto;
-    
   }
   
   .basketball-container {
@@ -388,6 +386,5 @@ body{
   z-index: 2;
 }
 
-/* media Queries */
 
     
