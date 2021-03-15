@@ -10,10 +10,10 @@
     transform: translateX(-50%);
     /* padding: 10px; */
     box-sizing: border-box;
-    background-image: url(/static/media/nba-scoreboard.85d02692.png);
+    /* background-image: url(/static/media/nba-scoreboard.85d02692.png); */
     background-position: top;
-    background-size: contain;
     background-repeat: no-repeat;
+    background-size: contain;
     color: white;
     text-align: center;
     font-size: 3vh;
@@ -61,18 +61,15 @@
     } */
       
     .confirmButton {
-      /* margin-top: 3rem; */
+      font-size: 1em;
       position: absolute;
       left: 35.5%;
       top: 70%;
       width: 30%;
       background: none;
-      /* color: white;
-      /* color: tomato; */
       font-family: Codystar; 
       /* keeping font properties even though can't see text because it helps with sizing of button */
       font-weight: bolder;
-      /* font-size: 1.5rem; */
       padding: .75em 2em;
       border: none;
       cursor: pointer;
@@ -97,7 +94,7 @@
     left: 64%;
   }
 
-  @media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 155/100) {
+  @media (min-aspect-ratio: 1/1) and (max-aspect-ratio: 133/100) {
     .message-container {
       font-size: 2.4vh;
       left: 10%;
@@ -111,7 +108,114 @@
     .score-right {
       width: 26%;
       height: 21%; 
-      top: 51.5%;
+      top: 56.5%;
+      font-size: 5vh;
+    }
+    
+    .score-left {
+      left: 10%;
+    } 
+    
+    .score-right {
+      left: 62%;
+    }
+
+    .confirmButton {
+      left: 35%;
+      top: 47%;
+      width: 30%;
+      padding: 1em 2em;
+     
+    }
+  }
+
+  @media (min-aspect-ratio: 133/100) and (max-aspect-ratio: 139/100) {
+    .message-container {
+      font-size: 2.4vh;
+      left: 10%;
+      top: 6%;
+      max-width: 80%;
+      min-width: 80%;
+      height: 44%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 26%;
+      height: 21%; 
+      top: 52.5%;
+      font-size: 5vh;
+    }
+    
+    .score-left {
+      left: 10%;
+    } 
+    
+    .score-right {
+      left: 62%;
+    }
+
+    .confirmButton {
+      left: 35%;
+      top: 47%;
+      width: 30%;
+      padding: 2.5em 2em;
+     
+    }
+  }
+
+  
+
+  @media (min-aspect-ratio: 139/100) and (max-aspect-ratio: 145/100) {
+    .message-container {
+      font-size: 2.4vh;
+      left: 10%;
+      top: 6%;
+      max-width: 80%;
+      min-width: 80%;
+      height: 46%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 26%;
+      height: 21%; 
+      top: 56.5%;
+      font-size: 5vh;
+    }
+    
+    .score-left {
+      left: 10%;
+    } 
+    
+    .score-right {
+      left: 62%;
+    }
+
+    .confirmButton {
+      left: 35%;
+      top: 47%;
+      width: 30%;
+      padding: 2.5em 2em;
+     
+    }
+  }
+
+  @media (min-aspect-ratio: 145/100) and (max-aspect-ratio: 155/100) {
+    .message-container {
+      font-size: 2.4vh;
+      left: 10%;
+      top: 6%;
+      max-width: 80%;
+      min-width: 80%;
+      height: 52%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 26%;
+      height: 21%; 
+      top: 57.5%;
       font-size: 5vh;
     }
     
@@ -195,7 +299,7 @@
 
     .confirmButton {
       left: 35.5%;
-      top: 69%;
+      top: 74%;
       width: 30%;
     }
   }  

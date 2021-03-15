@@ -1,4 +1,5 @@
 import React from 'react';
+// import scorecard from "../assets/images/nba-scoreboard.png";
 import './ArenaMonitor.css';
 class ArenaMonitor extends React.Component {
 
@@ -8,7 +9,7 @@ class ArenaMonitor extends React.Component {
         console.log(this.props.message);
         return (
             
-            <div className="customAlert"  >
+            <div className="customAlert" style={{backgroundImage: `url(${require("../assets/images/nba-scoreboard.png")})`}}>
     <div className="message-container"> 
          <p className='message'>{this.props.message}</p>  
     </div>
