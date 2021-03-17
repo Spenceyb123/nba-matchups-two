@@ -71,7 +71,7 @@ class PlayerCard extends React.Component {
     
            
             return (
-                <div>
+                <div className="mtg-card-flex-container">
              
                 <div className="mtg-card-container">
                     <img className="MTG-card" src={MTGCard} alt="player card"/>

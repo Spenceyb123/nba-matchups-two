@@ -50,6 +50,7 @@ body{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 2;
+    display: flex;
   }
   
   /* last three lines to put glow around bball */
@@ -59,6 +60,7 @@ body{
     border-radius: 50%;
     box-shadow: 0px 0px 9px 4px white;
     animation: glow 1s linear infinite alternate;
+    margin: 0 auto;
   }
   
   .basketball:active {
