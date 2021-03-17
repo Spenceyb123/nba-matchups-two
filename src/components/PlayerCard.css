@@ -10,16 +10,17 @@
   
   .MTG-card {
    height: 100%;
+   
   }
 
   /* media Queries */
-
+/* 
 @media (max-width: 750px) {
   .mtg-card-container {
     height: 85%;
     
   }
-}
+} */
   
   
   
