@@ -1,5 +1,8 @@
 @import-normalize;
 
+@import url(//fonts.googleapis.com/css?family=Codystar);
+
+
 
 body{
     margin: 0;
@@ -42,7 +45,7 @@ body{
   }
   
   .basketball-container {
-   height: 25%;
+   height: 20vmin;
    margin: 0;
     position: absolute;
     top: 42%;
@@ -50,7 +53,7 @@ body{
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
     z-index: 2;
-    display: flex;
+    display: flex; /* to center in firefox */
   }
   
   /* last three lines to put glow around bball */
@@ -60,7 +63,7 @@ body{
     border-radius: 50%;
     box-shadow: 0px 0px 9px 4px white;
     animation: glow 1s linear infinite alternate;
-    margin: 0 auto;
+    margin: 0 auto; /* to center in firefox */
   }
   
   .basketball:active {
@@ -78,8 +81,8 @@ body{
     position: absolute;
     width: 84%;
     height: 5%;
-    top: 6.1%;
-    font-size: 3vh;
+    top: 6.6%;
+    font-size: 2.5vh;
     left: 10%;
 }
 
@@ -88,7 +91,7 @@ body{
   
   .year {
       float: right;
-      padding-right: 15px;
+      padding-right: 5%;
   }
   
   .player-image-container {
@@ -122,7 +125,7 @@ body{
   
   /* adding hover description of stats */
   .stats-hover {
-    width: 130px;
+    white-space: nowrap;
     font-weight: bold;
   }
   
@@ -200,7 +203,6 @@ body{
     display: inline-block;
     background-color: #EAEBE4;
     color:  rgb(163, 119, 6);
-    width: 120px;
     
   }
   
@@ -216,11 +218,11 @@ body{
     display: inline-block;
     background-color: #EAEBE4;
     color:  rgb(163, 119, 6);
-    width: 120px;
   }
   
   .stats-paragraph.right.TPG .stats-hover {
     display: none;
+    white-space: normal;
   }
   
   .stats-paragraph.right.TPG:hover .stats-before-hover {
@@ -231,7 +233,6 @@ body{
     display: inline-block;
     background-color: #EAEBE4;
     color:  rgb(163, 119, 6);
-    width: 75px;
   }
   
   
