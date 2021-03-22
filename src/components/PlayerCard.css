@@ -37,7 +37,7 @@
 }
 
 
-@media (min-aspect-ratio: 190/100) {
+@media (min-aspect-ratio: 165/100) {
   .mtg-card-container {
     min-width: 27%;
     max-width: 27%;

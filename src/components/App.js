@@ -644,6 +644,9 @@ class App extends React.Component {
     
         return (
           <div>
+            <div className="rotate-screen-please">
+              <p className="rotate-please-para">Please rotate your device</p>
+            </div>
           <div className="winnerComponent">
             <Winner  />
             </div>
