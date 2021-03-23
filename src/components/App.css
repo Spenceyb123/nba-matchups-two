@@ -458,4 +458,12 @@ body{
   .rotate-screen-please {
     display: inline-block;
   }
+
+  .winnerComponent {
+    width: 0;
+    position: fixed;
+    height: 0;
+    z-index: 2;
+    visibility: hidden;
+  }
 }

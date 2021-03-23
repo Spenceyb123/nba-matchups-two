@@ -271,6 +271,72 @@
     }
   }  
 
+  @media (min-aspect-ratio: 1675/1000) and (max-aspect-ratio: 1800/1000) {
+    .message-container {
+      font-size: 2.8vh;
+      left: 20%;
+      top: 5%;
+      min-width: 60%;
+      max-width: 60%;
+      height: 66%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 26%;
+      height: 10%; 
+      top: 68.5%;
+      font-size: 6.5vh;
+    }
+    
+    .score-left {
+      left: 14%;
+    } 
+    
+    .score-right {
+      left: 61%;
+    }
+
+    .confirmButton {
+      left: 35.5%;
+      top: 55%;
+      width: 30%;
+    }
+  }  
+
+  @media (min-aspect-ratio: 1800/1000) and (max-aspect-ratio: 2000/1000) {
+    .message-container {
+      font-size: 2.8vh;
+      left: 20%;
+      top: 5%;
+      min-width: 60%;
+      max-width: 60%;
+      height: 66%;
+    }
+
+    .score-left,
+    .score-right {
+      width: 26%;
+      height: 10%; 
+      top: 75.5%;
+      font-size: 6.5vh;
+    }
+    
+    .score-left {
+      left: 14%;
+    } 
+    
+    .score-right {
+      left: 61%;
+    }
+
+    .confirmButton {
+      left: 35.5%;
+      top: 74%;
+      width: 30%;
+    }
+  }  
+
   @media (min-aspect-ratio: 2/1) {
     .message-container {
       font-size: 2.8vh;
@@ -284,7 +350,7 @@
     .score-left,
     .score-right {
       width: 26%;
-      height: 21%; 
+      height: 10%; 
       top: 74.5%;
       font-size: 6.5vh;
     }
