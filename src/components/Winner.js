@@ -10,8 +10,7 @@ class Winner extends React.Component {
 
 render() {
     return (
-        <div className="container"> 
-    <p className="hell-ya">Hell ya, you win, thanks for playing!!</p>
+        <div className="container">
     
     <div className="trophy-container">
         <img src={Trophy} className="trophy" alt="NBA Finals Trophy"/>

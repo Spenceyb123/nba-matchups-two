@@ -231,6 +231,7 @@ class App extends React.Component {
                      setTimeout(() => {
                       if (this.state.countLeft === 10) {
                         winner.style.display = "block";
+                        this.setState( { message: "YOU WIN!!!"} );
                      }
                      }, 2000);
                      
@@ -285,6 +286,7 @@ class App extends React.Component {
                         setTimeout(() => {
                           if (this.state.countLeft === 10) {
                             winner.style.display = "block";
+                            this.setState( { message: "YOU WIN!!!"} );
                          }
                          }, 2000);
 
@@ -335,6 +337,7 @@ class App extends React.Component {
                         setTimeout(() => {
                           if (this.state.countLeft === 10) {
                             winner.style.display = "block";
+                            this.setState( { message: "YOU WIN!!!"} );
                          }
                          }, 2000);
 
@@ -383,6 +386,7 @@ class App extends React.Component {
                         setTimeout(() => {
                           if (this.state.countLeft === 10) {
                             winner.style.display = "block";
+                            this.setState( { message: "YOU WIN!!!"} );
                          }
                          }, 2000);
                       
@@ -432,6 +436,7 @@ class App extends React.Component {
                         setTimeout(() => {
                           if (this.state.countLeft === 10) {
                             winner.style.display = "block";
+                            this.setState( { message: "YOU WIN!!!"} );
                          }
                          }, 2000);
 
@@ -481,6 +486,7 @@ class App extends React.Component {
                         setTimeout(() => {
                           if (this.state.countLeft === 10) {
                             winner.style.display = "block";
+                            this.setState( { message: "YOU WIN!!!"} );
                          }
                          }, 2000);
 
@@ -529,6 +535,7 @@ class App extends React.Component {
                         setTimeout(() => {
                           if (this.state.countLeft === 10) {
                             winner.style.display = "block";
+                            this.setState( { message: "YOU WIN!!!"} );
                          }
                          }, 2000);
                       
