@@ -82,7 +82,7 @@ class PlayerCard extends React.Component {
                     </div>
                     <div className="stats">
                         <p className="stats-paragraph left PPG" >
-                          <span className="stats-before-hover">PPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.PTS : data[random].PTS} </span>
+                          <span className="stats-before-hover">PPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.PTS :  data[random].PTS}  </span>
                           <span className="stats-hover">Points Per Game</span>
                           </p>
                         <p className="stats-paragraph left TSP">

@@ -178,30 +178,25 @@ class App extends React.Component {
                   statsArrayRandomTwo.push(randomTwoPPG, randomTwoTSP, randomTwoAPG, randomTwoRPG, randomTwoBPG, randomTwoSPG, randomTwoTPG);
       
                   const randomStat = Math.floor(Math.random() * statsArrayRandom.length); 
-                //   console.log(randomStat);
-                ///messing around here====================
-                //work up dom to find out what parent of number is?
-                let test = statsArrayRandom[randomStat];
-                console.log(test);
+
 
                   let playerOne = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
                   let playerTwo = document.getElementsByClassName("name-container")[1].childNodes[0].textContent;
 
                   if(statsArrayRandom[randomStat] === statsArrayRandomTwo[randomStat]) {
-                      console.log(statsArrayRandom[randomStat]);
+                      // below arr is to get the two different "stats-paragraph"[randomStat] nodes
+                      let arr = [document.getElementsByClassName("stats-paragraph")[randomStat], document.getElementsByClassName("stats-paragraph")[randomStat + 7]];
                     (() => {
 
-                        //how get animation on matching stat classes? 
+                        console.log(arr);
                         
-                        let ppg =  document.getElementsByClassName("stats-paragraph left PPG");     
-                        
-                        for (const p of ppg) {
-                            p.classList.add("animation");
+                        for (const a of arr) {
+                            a.classList.add("animation");
                           }
                         
                     })();
          
-                 //pass this down to ArenaMonitor?
+                 
                   this.setState( { 
                       message: "Neither player gains the advantage: Jump Ball!",
                    } );
