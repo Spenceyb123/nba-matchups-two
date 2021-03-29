@@ -5,27 +5,37 @@ import MTGCard from "../assets/images/mtg-card.png";
 
 class PlayerCard extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-    // }
     constructor(props) {
         super(props);
-
-        // this.state = {
-        //     jordanKobeInitial : 0    
-        //  };
     }
     
     
     
         componentDidMount () {
             console.log('ChildDiv did mount');
-          
+            
           }
 
-          shouldComponentUpdate(nextProps, nextState) {
+        shouldComponentUpdate(nextProps, nextState) {
 
-            if(this.props.samePlayers === true) {
+            console.log("playercard jordanKobe: " + this.props.jordanKobeInitial + " " + "countLeft: " + this.props.countLeft);
+
+            //dont get new players if winnerComp showing 
+            let winnerComp = document.getElementsByClassName("winnerComponent")[0];
+            console.log(winnerComp);
+            
+            if(this.props.countLeft >= 10 && window.getComputedStyle(winnerComp).display === "block") {
+              return false;
+            }
+
+            // sets back to jordan kobe when left score hit
+            if(this.props.countLeft >= 10 && this.props.jordanKobeInitial >= 1) {
+              return true;
+            }
+
+          
+
+            if (this.props.samePlayers === true) {
               console.log("same players");
               return true;
 
@@ -46,6 +56,7 @@ class PlayerCard extends React.Component {
                 return true;
              }
             console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers); 
+            console.log("playerCard didn't update");
             return false;
           
           }

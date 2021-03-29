@@ -10,16 +10,14 @@ import Winner from "./Winner";
 
 
 //working on
-//1.if stat PPG, even if not eqaul, saying equal -- right now it is comparing wrong stat - should be fixed now
-//2. if same players, rere3nder // this should be working, line 82
+//playerCArd line 23 messing with jordan kobe in hideMonitor and playAgain, to get so that set at 0, and resets cards
+  //after playAgain clicked 
+
 //1. alert component(?)
     // -- fade in and out with monitor
     //bball and monitor fade in similtaneously
         // add function that does both and then call it after stats compare if statement ============
 //3. hide monitor on enter pressed
-//3. add alert for tie if stats the same 
-//4. add something so random players cant be the same 
-//5. areanmonitor scc to center to top 
 //6. have jumb ball button say "start" initilly (?)
 
 let message;
@@ -73,6 +71,7 @@ class App extends React.Component {
 
       componentDidUpdate() {
           console.log("app updated");
+          console.log("jordanKobe compDidUpdate: " + this.state.jordanKobeInitial);
 
           let playerOneName = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
           let playerTwoName = document.getElementsByClassName("name-container")[1].childNodes[0].textContent;
@@ -112,15 +111,24 @@ class App extends React.Component {
 
 
       handleBasketballButton =  () => {
-        
-        // get playerCard to rerender only if monotir clicked after first bball click
+        console.log(this.state.countLeft);
 
+        //testing below...
+        if(this.state.countLeft >= 10) {
+          console.log("bball clicked, count more than 10", document.getElementsByClassName("confirmButton")[0]);
+          // document.getElementsByClassName("confirmButton").disabled = true; 
+           } 
+        //... 
+
+        // get playerCard to rerender only if monotir clicked after first bball click
         if ( this.state.jordanKobeInitial < 1 ) {
             this.setState( {bballNewPlayers: false,
                 jordanKobeInitial: this.state.jordanKobeInitial +1
             } );
             return;
         }
+
+        console.log("jordanKobe handleBball: " + this.state.jordanKobeInitial);
 
         if (this.state.bballNewPlayers == false) {
             this.setState( {bballNewPlayers: true,
@@ -133,28 +141,9 @@ class App extends React.Component {
 
         let winner = document.getElementsByClassName('winnerComponent')[0];
 
-        // document.getElementsByClassName('basketball')[0].style.display = "none";
-        // this.hide(document.getElementsByClassName('customAlert')[0]);
-        // document.getElementsByClassName('basketball')[0].classList.add("fade-out");
-        // setTimeout(function(){
-        //     document.getElementsByClassName('basketball')[0].style.display = 'none';
-        //   }, 300);
-
-
-        //====================================================
-        // basketballButton.style.display = "none";
         monitor.classList.remove('fade-out');
           
        
-
-          
-    //     if (random === randomTwo) { //so that won't be same two players 
-    //       random = Math.floor(Math.random() * Images.length); 
-    //       randomTwo = Math.floor(Math.random() * Images.length);
-    //     } 
-          
-           
-            //   if(random !== undefined || randomTwo !== undefined){
                   
                   const statsArrayRandom = [];
                   const randomPPG = parseFloat(document.getElementsByClassName("stats-paragraph left PPG")[0].textContent.match(/[0-9|.]/g).join('')); 
@@ -233,7 +222,7 @@ class App extends React.Component {
                         winner.style.display = "block";
                         this.setState( { message: "YOU WIN!!!"} );
                      }
-                     }, 2000);
+                     }, 1000);
                      
 
                      basketballButton.style.display = "none";
@@ -288,7 +277,7 @@ class App extends React.Component {
                             winner.style.display = "block";
                             this.setState( { message: "YOU WIN!!!"} );
                          }
-                         }, 2000);
+                         }, 1000);
 
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -339,7 +328,7 @@ class App extends React.Component {
                             winner.style.display = "block";
                             this.setState( { message: "YOU WIN!!!"} );
                          }
-                         }, 2000);
+                         }, 1000);
 
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -388,7 +377,7 @@ class App extends React.Component {
                             winner.style.display = "block";
                             this.setState( { message: "YOU WIN!!!"} );
                          }
-                         }, 2000);
+                         }, 1000);
                       
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -438,7 +427,7 @@ class App extends React.Component {
                             winner.style.display = "block";
                             this.setState( { message: "YOU WIN!!!"} );
                          }
-                         }, 2000);
+                         }, 1000);
 
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -488,7 +477,7 @@ class App extends React.Component {
                             winner.style.display = "block";
                             this.setState( { message: "YOU WIN!!!"} );
                          }
-                         }, 2000);
+                         }, 1000);
 
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -537,7 +526,7 @@ class App extends React.Component {
                             winner.style.display = "block";
                             this.setState( { message: "YOU WIN!!!"} );
                          }
-                         }, 2000);
+                         }, 1000);
                       
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -567,73 +556,128 @@ class App extends React.Component {
                           }, 50); 
       
                   }
-      
-            //   }
-             
-      
-            
-
       }
 
+
+
+
+
       hideMonitor = () => {
-            
-            this.setState( {
-                jordanKobeInitial: this.state.jordanKobeInitial +1
-            } );
-            console.log(this.state.jordanKobeInitial);
 
-            //trying to get monitor to fade in / fade out==================
-        //     document.getElementsByClassName('customAlert')[0].classList.add("fade-out");
-        //     setTimeout(function(){
-        //     document.getElementsByClassName('customAlert')[0].style.display = 'none';
-        //   }, 300);
-
-        //   document.getElementsByClassName('basketball')[0].classList.add("fade-in");
-        //     setTimeout(function(){
-        //     document.getElementsByClassName('customAlert')[0].style.display = 'none';
-        //   }, 300);
-          
-
-
-
-            // below to remove yellow animation on confirmButton click 
-        let statsParagraphElements = document.querySelectorAll(".stats-paragraph");
-        (function _removeClasses() {
-          for (var i = 0; i < statsParagraphElements.length; i++) {
-            statsParagraphElements[i].classList.remove('animation')
-          }
-        }());
-
-        //fade arenaMonitor out
+        console.log("hide monitor started");
         let monitor = document.getElementsByClassName('customAlert')[0];
         let basketballButton = document.getElementsByClassName('basketball')[0];
 
-        monitor.classList.add('fade-out');
-        basketballButton.classList.remove('fade-out');
-        basketballButton.classList.add('fade-in');
-        setTimeout(function(){
-            monitor.style.display = 'none';
-            basketballButton.style.display = 'block';
-          }, 100); 
+            //experimenting below...
+        if(this.state.countLeft >= 10) {
 
-
-
-        //fade bball button back in
+           this.setState( {jordanKobeInitial : 0} );
+              
+          // monitor.classList.add('fade-out');
+          basketballButton.classList.remove('fade-out');
+          basketballButton.classList.add('fade-in');
+          setTimeout(function(){
+              monitor.style.display = 'none';
+              basketballButton.style.display = 'block';
+            }, ); 
+              console.log("score left 10, jordanKobe should be set to 0"); 
+              console.log("jordanKobe count left 10: " + this.state.jordanKobeInitial);
+            } 
+            //experimnting above
+            
+            
+            else {
+              
+              this.setState( {
+                  jordanKobeInitial: this.state.jordanKobeInitial +1
+              } );
+           
+              // below to remove yellow animation on confirmButton click 
+          let statsParagraphElements = document.querySelectorAll(".stats-paragraph");
+          (function _removeClasses() {
+            for (var i = 0; i < statsParagraphElements.length; i++) {
+              statsParagraphElements[i].classList.remove('animation')
+            }
+          }());
+  
+          //fade arenaMonitor out
+          
+  
+          monitor.classList.add('fade-out');
+          basketballButton.classList.remove('fade-out');
+          basketballButton.classList.add('fade-in');
+          setTimeout(function(){
+              monitor.style.display = 'none';
+              basketballButton.style.display = 'block';
+            }, 100); 
+          //fade bball button back in
         
+  
+          console.log("jordanKobe hideMonitor: " + this.state.jordanKobeInitial);
+          console.log("end of hide monitor function")
+            }
+
+            
+            
+//figuring out call stack 
+        
+    }
+
+
+
+    playAgain = () => {
+      console.log("play again clicked");
+
+      let statsParagraphElements = document.querySelectorAll(".stats-paragraph");
+          (function _removeClasses() {
+            for (var i = 0; i < statsParagraphElements.length; i++) {
+              statsParagraphElements[i].classList.remove('animation')
+            }
+          }());
+
+      this.setState( {
+        
+        jordanKobeInitial : 0,
+        countLeft: 0,
+        countRight: 0,
+        bballNewPlayers: true, //for jordanKobe
+        samePlayers: false  
+       } );
+
+       console.log("play again clicked, jordanKobe should be set to 0"); 
+       console.log("jordanKobe count at beg playAgain: " + this.state.jordanKobeInitial);
+       console.log("count left after playagain clicked: " + this.state.countLeft);
+
+       let winnerPopup = document.getElementsByClassName('winnerComponent')[0];
+       winnerPopup.style.display = "none";
 
        
-        // setTimeout(function(){
-            
-        //   }, 300);
 
-    
+       this.hideMonitor();
+
+
+       console.log("jordanKobe at end playAgain: " + this.state.jordanKobeInitial);
+      
+       let self = this; 
+       console.log("count left right before setTimout: " + self.state.countLeft);
+
+
+       setTimeout(function(){ 
+        console.log("count left after playagain clicked with setTimout: " + self.state.countLeft);
+        }, );
+
+        console.log("count left right after setTimout: " + self.state.countLeft);
+
+        //make it so ok button in arena monitor is clickable again when game resets
+        let confirm = document.getElementsByClassName("confirmButton")[0];
+        confirm.disabled = false;
+
+       
+
     }
 
       render() {
         console.log("app render");
-        // document.getElementsByClassName("name-container").length > 0;
-        
-        
         
     
 
@@ -650,7 +694,7 @@ class App extends React.Component {
               <p className="rotate-please-para">Please rotate your device</p>
             </div>
           <div className="winnerComponent">
-            <Winner  />
+            <Winner playAgain={this.playAgain} />
             </div>
 
           <div className="main-div" tabIndex='-1'> 
@@ -663,10 +707,10 @@ class App extends React.Component {
             <div className="cards-container" tabIndex= "-1">
               
               
-            <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[0]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} />
+            <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[40]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} countLeft={this.state.countLeft} />
         
   
-            <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[40]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} /> 
+            <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[0]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} countLeft={this.state.countLeft} /> 
     
            
               

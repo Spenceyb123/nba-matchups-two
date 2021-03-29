@@ -2,7 +2,7 @@
 
 const Images = [
 
-    { id: 1, src: require("./assets/images/jordan95.jpg"), alt: "Michael Jordan 1995-96"},
+    { id: 1, src: require("./assets/images/jordan96.jpg"), alt: "Michael Jordan 1995-96"},
     { id: 2, src: require('./assets/images/jordan91.jpg'), alt: "Michael Jordan 1990-91"},
     { id: 3, src: require('./assets/images/james13.jpg'), alt: "Lebron James 2012-13"},
     { id: 4, src: require('./assets/images/durant14.jpg'), alt: "Kevin Durant 2013-14"},
@@ -49,7 +49,7 @@ const Images = [
     { id: 45, src: require('./assets/images/arenas06.jpg'), alt: "Gilbert Arenas 2005-06"},
     { id: 46, src: require('./assets/images/stockton97.jpg'), alt: "John Stockton 1996-97"},
     { id: 47, src: require('./assets/images/roy09.jpg'), alt: "Brandon Roy 2008-09"},
-    { id: 48, src: require('./assets/images/bird85.jpg'), alt: "Larry Bird 1984-1985"},
+    { id: 48, src: require('./assets/images/bird86.jpg'), alt: "Larry Bird 1985-1986"},
 
 ]
 

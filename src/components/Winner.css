@@ -23,7 +23,11 @@
 }
 
 .play-again {
-    font-size: 2vw;
+    font-size: 1.6vw;
     display: block;
     margin: 0 auto;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: .2em .8em;
 }
