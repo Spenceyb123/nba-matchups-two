@@ -32,7 +32,7 @@ class App extends React.Component {
             data: null,
             jordanKobeInitial : 0,
             message: "",
-            countLeft: 0,
+            countLeft: 9,
             countRight: 9,
             bballNewPlayers: true, //for jordanKobe
             samePlayers: false  
