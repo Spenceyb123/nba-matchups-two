@@ -18,18 +18,29 @@ class PlayerCard extends React.Component {
 
         shouldComponentUpdate(nextProps, nextState) {
 
-            console.log("playercard jordanKobe: " + this.props.jordanKobeInitial + " " + "countLeft: " + this.props.countLeft);
+            console.log("playercard jordanKobe: " + this.props.jordanKobeInitial + " " + "countRight: " + this.props.countRight);
 
             //dont get new players if winnerComp showing 
             let winnerComp = document.getElementsByClassName("winnerComponent")[0];
-            console.log(winnerComp);
+            
+
+            let loserComp = document.getElementsByClassName("loser-component")[0];
+            console.log(loserComp);
             
             if(this.props.countLeft >= 10 && window.getComputedStyle(winnerComp).display === "block") {
               return false;
             }
 
+            if(this.props.countRight >= 10 && window.getComputedStyle(loserComp).display === "block") {
+              return false;
+            }
+
             // sets back to jordan kobe when left score hit
             if(this.props.countLeft >= 10 && this.props.jordanKobeInitial >= 1) {
+              return true;
+            }
+
+            if(this.props.countRight >= 10 && this.props.jordanKobeInitial >= 1) {
               return true;
             }
 
