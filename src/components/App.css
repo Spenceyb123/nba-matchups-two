@@ -430,6 +430,17 @@ body{
   z-index: 2;
 }
 
+.loser-component {
+  display: none;
+  width: 100%;
+  /* background-image: url(../assets/images/fans-booing.jpg);
+  background-size: cover;
+  opacity: .2; */
+  position: absolute;
+  height: 100%;
+  z-index: 2;
+}
+
 /* media queries */
 
 /* @media (max-aspect-ratio: 133/100) {
@@ -461,6 +472,14 @@ body{
   }
 
   .winnerComponent {
+    width: 0;
+    position: fixed;
+    height: 0;
+    z-index: 2;
+    visibility: hidden;
+  }
+
+  .loser-component {
     width: 0;
     position: fixed;
     height: 0;

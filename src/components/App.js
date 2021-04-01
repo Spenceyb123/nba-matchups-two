@@ -3,10 +3,12 @@ import './App.css';
 import * as d3 from 'd3';
 import importedCsvData from '../assets/players.csv';
 import Images from'../Images';
+import BasketballButtonStart from "../assets/images/basketball-button-start-game.png";
 import BasketballButton from "../assets/images/basketball-button.png";
 import PlayerCard from './PlayerCard';
 import AlertMonitor from './ArenaMonitor';
 import Winner from "./Winner";
+import Loser from "./Loser";
 
 
 //working on
@@ -30,8 +32,8 @@ class App extends React.Component {
             data: null,
             jordanKobeInitial : 0,
             message: "",
-            countLeft: 9,
-            countRight: 0,
+            countLeft: 0,
+            countRight: 9,
             bballNewPlayers: true, //for jordanKobe
             samePlayers: false  
          };
@@ -139,7 +141,11 @@ class App extends React.Component {
         let monitor = document.getElementsByClassName('customAlert')[0];
         let basketballButton = document.getElementsByClassName('basketball')[0];
 
+        //winner and loser comps when hit 10
         let winner = document.getElementsByClassName('winnerComponent')[0];
+        let loser = document.getElementsByClassName('loser-component')[0];
+
+
 
         monitor.classList.remove('fade-out');
           
@@ -249,6 +255,13 @@ class App extends React.Component {
                         countRight: this.state.countRight + 1
                      } );
 
+                     setTimeout(() => {
+                      if (this.state.countRight === 10) {
+                        loser.style.display = "block";
+                        this.setState( { message: "YOU LOSE"} );
+                     }
+                     }, 1000);
+
                     
                      basketballButton.style.display = "none";
                      monitor.classList.add('fade-in');
@@ -301,6 +314,13 @@ class App extends React.Component {
                         countRight: this.state.countRight + 1
                     } );
 
+                    setTimeout(() => {
+                      if (this.state.countRight === 10) {
+                        loser.style.display = "block";
+                        this.setState( { message: "YOU LOSE"} );
+                     }
+                     }, 1000);
+
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');  
                         setTimeout(function(){
@@ -350,6 +370,13 @@ class App extends React.Component {
                           message : playerTwo + " makes " + playerOne + "'s head spin with the dime!",
                           countRight: this.state.countRight + 1
                         } );
+
+                        setTimeout(() => {
+                          if (this.state.countRight === 10) {
+                            loser.style.display = "block";
+                            this.setState( { message: "YOU LOSE"} );
+                         }
+                         }, 1000);
                       
                         basketballButton.style.display = "none";
                         monitor.classList.add('fade-in');
@@ -400,6 +427,13 @@ class App extends React.Component {
                           message : playerTwo + " secures the rebound!",
                           countRight: this.state.countRight + 1
                          } );
+
+                         setTimeout(() => {
+                          if (this.state.countRight === 10) {
+                            loser.style.display = "block";
+                            this.setState( { message: "YOU LOSE"} );
+                         }
+                         }, 1000);
                       
                          basketballButton.style.display = "none";
                          monitor.classList.add('fade-in');
@@ -450,6 +484,13 @@ class App extends React.Component {
                           message : playerTwo + " swats " + playerOne + "!",
                           countRight: this.state.countRight + 1
                          } );
+
+                         setTimeout(() => {
+                          if (this.state.countRight === 10) {
+                            loser.style.display = "block";
+                            this.setState( { message: "YOU LOSE"} );
+                         }
+                         }, 1000);
                      
                          basketballButton.style.display = "none";
                          monitor.classList.add('fade-in');
@@ -500,6 +541,13 @@ class App extends React.Component {
                           countRight: this.state.countRight + 1
                          } );
 
+                         setTimeout(() => {
+                          if (this.state.countRight === 10) {
+                            loser.style.display = "block";
+                            this.setState( { message: "YOU LOSE"} );
+                         }
+                         }, 1000);
+
                          basketballButton.style.display = "none";
                          monitor.classList.add('fade-in');
                          setTimeout(function(){
@@ -548,6 +596,13 @@ class App extends React.Component {
                           message : playerOne + " turns the ball over... that's embarrassing",
                           countRight: this.state.countRight + 1
                          } );
+
+                         setTimeout(() => {
+                          if (this.state.countRight === 10) {
+                            loser.style.display = "block";
+                            this.setState( { message: "YOU LOSE"} );
+                         }
+                         }, 1000);
                       
                          basketballButton.style.display = "none";
                          monitor.classList.add('fade-in');
@@ -651,6 +706,9 @@ class App extends React.Component {
        let winnerPopup = document.getElementsByClassName('winnerComponent')[0];
        winnerPopup.style.display = "none";
 
+       let loserPopup = document.getElementsByClassName('loser-component')[0];
+       loserPopup.style.display = "none";
+
        
 
        this.hideMonitor();
@@ -697,10 +755,15 @@ class App extends React.Component {
             <Winner playAgain={this.playAgain} />
             </div>
 
+          <div className='loser-component'>
+            <Loser playAgain={this.playAgain} />
+            </div>
+            
+
           <div className="main-div" tabIndex='-1'> 
      
             <div className="basketball-container"> 
-            <img className="basketball" src={BasketballButton} onClick={this.handleBasketballButton } alt="click this basketball button to get a new matchup"/>
+            <img className="basketball" src={this.state.jordanKobeInitial < 1 ? BasketballButtonStart : BasketballButton} onClick={this.handleBasketballButton } alt="click this basketball button to get a new matchup"/>
             </div>
             
           

@@ -1,0 +1,33 @@
+.container {
+    margin: 0 auto;
+    
+    font-weight: bolder;
+    width: 50%;
+    height: 65%;
+    top: 25%;
+    left: 30%;
+    z-index: 2;
+    transform: translateY(35%);
+}
+
+.trophy-container {
+    height: 75%;
+    margin: 0 auto;
+}
+
+.trophy {
+    display: block;
+    height: 100%;
+    margin: 0 auto;
+    
+}
+
+.play-again {
+    font-size: 1.6vw;
+    display: block;
+    margin: 0 auto;
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: .2em .8em;
+}
