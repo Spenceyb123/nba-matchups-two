@@ -9,18 +9,17 @@ import PlayerCard from './PlayerCard';
 import AlertMonitor from './ArenaMonitor';
 import Winner from "./Winner";
 import Loser from "./Loser";
+import Info from "./Info";
 
 
-//working on
-//playerCArd line 23 messing with jordan kobe in hideMonitor and playAgain, to get so that set at 0, and resets cards
-  //after playAgain clicked 
+//working on...
 
 //1. alert component(?)
     // -- fade in and out with monitor
     //bball and monitor fade in similtaneously
         // add function that does both and then call it after stats compare if statement ============
 //3. hide monitor on enter pressed
-//6. have jumb ball button say "start" initilly (?)
+
 
 let message;
 
@@ -751,6 +750,11 @@ class App extends React.Component {
             <div className="rotate-screen-please">
               <p className="rotate-please-para">Please rotate your device</p>
             </div>
+
+          <div className="info-component">
+          <Info />
+            </div>
+
           <div className="winnerComponent">
             <Winner playAgain={this.playAgain} />
             </div>

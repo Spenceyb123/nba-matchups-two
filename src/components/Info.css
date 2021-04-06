@@ -1,0 +1,27 @@
+.info-container {
+    background-color: white;
+    opacity: 95%;
+    width: max-content;
+    height: max-content;
+    margin: 0 auto;
+    transform: translateY(32%);
+    font-size: 1.7vw;
+    padding: 8vh 0;
+    border: solid 5px;
+    border-image: linear-gradient(76deg, rgba(34,89,195,1) 0%, rgba(137,167,223,1) 39%, rgba(255,255,255,1) 47%, rgba(254,136,142,1) 54%, rgba(253,45,56,1) 100%) 1;
+}
+
+
+.close-info {
+    position: absolute;
+    left: 1%;
+    top: 2%;
+    border: 1px solid black;
+    padding: 0 5px 3px 5px;
+    background-color: #d3d3d391;
+}
+
+.info-para {
+    text-align: center;
+    padding: 0 5%;
+}
