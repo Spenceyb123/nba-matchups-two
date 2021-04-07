@@ -475,22 +475,7 @@ body{
     display: inline-block;
   }
 
-  .winnerComponent {
-    width: 0;
-    position: fixed;
-    height: 0;
-    z-index: 2;
-    visibility: hidden;
-  }
-
-  .loser-component {
-    width: 0;
-    position: fixed;
-    height: 0;
-    z-index: 2;
-    visibility: hidden;
-  }
-
+  .winnerComponent, .loser-component,
   .info-component {
     width: 0;
     position: fixed;
@@ -498,4 +483,5 @@ body{
     z-index: 2;
     visibility: hidden;
   }
+
 }
