@@ -11,7 +11,7 @@ class Info extends React.Component {
     render() {
         return (
             <div className="info-container">
-                <div className="close-info">
+                <div className="close-info" onClick={this.props.closeInfo}>
                     x
                 </div>
                <p className="info-para">
@@ -19,7 +19,9 @@ class Info extends React.Component {
 
                 The two player cards compare some of the best statistical seasons NBA players have had! <br/> <br/>
 
-                You are on Team Jordan, click the "Start Game" button to get your first player matchup, and click "Jump Ball" to see who wins the matchup. <br/> <br/>
+                You are on Team Jordan on the left.  <br/> <br/>
+                
+                Click the "Start Game" button to get your first player matchup, and click "Jump Ball" to see who wins the matchup. <br/> <br/>
 
                 First team to 10 wins... good luck! <br/> <br/>
 

@@ -671,9 +671,6 @@ class App extends React.Component {
           console.log("end of hide monitor function")
             }
 
-            
-            
-//figuring out call stack 
         
     }
 
@@ -729,9 +726,20 @@ class App extends React.Component {
         let confirm = document.getElementsByClassName("confirmButton")[0];
         confirm.disabled = false;
 
-       
+    }
+
+
+
+    closeInfo = () => {
+      let info = document.getElementsByClassName("info-component")[0];
+      console.log(info);
+
+      console.log("clicked info x");
+      info.style.display = "none";
 
     }
+
+
 
       render() {
         console.log("app render");
@@ -752,7 +760,7 @@ class App extends React.Component {
             </div>
 
           <div className="info-component">
-          <Info />
+          <Info closeInfo = {this.closeInfo}/>
             </div>
 
           <div className="winnerComponent">

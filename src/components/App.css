@@ -2,18 +2,14 @@
 
 @import url(//fonts.googleapis.com/css?family=Codystar);
 
-html {
-  width: 100%;
+html, body {
   height: 100%;
-  
-    
-    
+  overflow: auto;
 }
 
 body{
     margin: 0;
     /* min-height: 100vh; */
-    width: 100%;
     background-image: url(../assets/images/bball_court.jpg);
     background-size: 100% 100%;
     /* min-width: 650px; */
@@ -51,7 +47,7 @@ body{
 /* if in orientation mode, above shows */
 
   .main-div {
-    min-width: 650px;
+    /* min-width: 650px; */
     width: 100%;
     height:100%;
     position: relative;
@@ -80,6 +76,7 @@ body{
     height: 100vh;
     justify-content: space-around;
     overflow: auto;
+   
   }
   
   .basketball-container {
@@ -448,7 +445,7 @@ body{
   z-index: 2;
 }
 
-/* media queries */
+/* MEDIA QUERIES */
 
 /* @media (max-aspect-ratio: 133/100) {
   body {
