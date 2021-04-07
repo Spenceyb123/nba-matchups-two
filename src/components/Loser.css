@@ -1,18 +1,19 @@
-.container {
+.loser-container {
     margin: 0 auto;
     
     font-weight: bolder;
     width: 50%;
-    height: 65%;
+    height: 50%;
     top: 25%;
     left: 30%;
     z-index: 2;
-    transform: translateY(35%);
+    transform: translateY(50%);
 }
 
-.trophy-container {
+.crying-jordan-container {
     height: 75%;
     margin: 0 auto;
+    margin-bottom: 5%;
 }
 
 .trophy {

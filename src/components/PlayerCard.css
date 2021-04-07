@@ -43,6 +43,13 @@
     max-width: 27%;
   }
 }
+
+/* @media (min-aspect-ratio: 175/100) {
+  .mtg-card-container {
+    min-width: 20%;
+    max-width: 20%;
+  }
+} */
   
   
   

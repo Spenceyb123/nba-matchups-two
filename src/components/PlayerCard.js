@@ -5,27 +5,48 @@ import MTGCard from "../assets/images/mtg-card.png";
 
 class PlayerCard extends React.Component {
 
-    // constructor(props) {
-    //     super(props);
-    // }
     constructor(props) {
         super(props);
-
-        // this.state = {
-        //     jordanKobeInitial : 0    
-        //  };
     }
     
     
     
         componentDidMount () {
             console.log('ChildDiv did mount');
-          
+            
           }
 
-          shouldComponentUpdate(nextProps, nextState) {
+        shouldComponentUpdate(nextProps, nextState) {
 
-            if(this.props.samePlayers === true) {
+            console.log("playercard jordanKobe: " + this.props.jordanKobeInitial + " " + "countRight: " + this.props.countRight);
+
+            //dont get new players if winnerComp showing 
+            let winnerComp = document.getElementsByClassName("winnerComponent")[0];
+            
+
+            let loserComp = document.getElementsByClassName("loser-component")[0];
+            console.log(loserComp);
+            
+            if(this.props.countLeft >= 10 && window.getComputedStyle(winnerComp).display === "block") {
+              return false;
+            }
+
+            if(this.props.countRight >= 10 && window.getComputedStyle(loserComp).display === "block") {
+              return false;
+            }
+
+            // sets back to jordan kobe when left score hit
+            if(this.props.countLeft >= 10 && this.props.jordanKobeInitial >= 1) {
+              return true;
+            }
+
+            if(this.props.countRight >= 10 && this.props.jordanKobeInitial >= 1) {
+              return true;
+            }
+
+          
+
+            if (this.props.samePlayers === true) {
               console.log("same players");
               return true;
 
@@ -46,6 +67,7 @@ class PlayerCard extends React.Component {
                 return true;
              }
             console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers); 
+            console.log("playerCard didn't update");
             return false;
           
           }
@@ -82,7 +104,7 @@ class PlayerCard extends React.Component {
                     </div>
                     <div className="stats">
                         <p className="stats-paragraph left PPG" >
-                          <span className="stats-before-hover">PPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.PTS : data[random].PTS} </span>
+                          <span className="stats-before-hover">PPG: {this.props.jordanKobeInitial < 1 ? jordanKobe.PTS :  data[random].PTS}  </span>
                           <span className="stats-hover">Points Per Game</span>
                           </p>
                         <p className="stats-paragraph left TSP">

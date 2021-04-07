@@ -1,12 +1,13 @@
 import React from 'react';
-// import scorecard from "../assets/images/nba-scoreboard.png";
 import './ArenaMonitor.css';
 class ArenaMonitor extends React.Component {
 
    
     render () {
-        //come back to this message? =====================
-        console.log(this.props.message);
+        
+        //to disable ok button so user can't click when game over / count reaches 10
+        let confirm = document.getElementsByClassName("confirmButton")[0];
+
         return (
             
             <div className="customAlert" style={{backgroundImage: `url(${require("../assets/images/nba-scoreboard.png")})`}}>
@@ -15,8 +16,7 @@ class ArenaMonitor extends React.Component {
     </div>
 
    
-  <input type='button' className='confirmButton' onClick={this.props.hideMonitor} />
-  {/* onClick={this.customAlertHandle.handleClick} onKeyPress={(event) => this.customAlertHandle.handleKeyPress(event)} */}
+  <input type='button' className='confirmButton' onClick={this.props.countLeft >= 10 || this.props.countRight >=10 ? confirm.disabled = true :  this.props.hideMonitor } />
   
   {/* //come back to this */}
         <div className="score-left">{this.props.countLeft}</div>
