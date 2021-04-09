@@ -437,9 +437,6 @@ body{
 .loser-component {
   display: none;
   width: 100%;
-  /* background-image: url(../assets/images/fans-booing.jpg);
-  background-size: cover;
-  opacity: .2; */
   position: absolute;
   height: 100%;
   z-index: 2;
