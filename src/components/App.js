@@ -28,8 +28,8 @@ class App extends React.Component {
             data: null,
             jordanKobeInitial : 0,
             message: "",
-            countLeft: 9,
-            countRight: 9,
+            countLeft: 0,
+            countRight: 0,
             bballNewPlayers: true, //for jordanKobe
             samePlayers: false  
          };
