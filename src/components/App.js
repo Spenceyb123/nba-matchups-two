@@ -14,10 +14,7 @@ import Info from "./Info";
 
 //working on...
 
-//1. alert component(?)
-    // -- fade in and out with monitor
-    //bball and monitor fade in similtaneously
-        // add function that does both and then call it after stats compare if statement ============
+
 //3. hide monitor on enter pressed
 
 
