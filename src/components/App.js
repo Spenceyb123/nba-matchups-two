@@ -779,7 +779,7 @@ class App extends React.Component {
             <div className="cards-container" tabIndex= "-1">
               
               
-            <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[41]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} countLeft={this.state.countLeft} countRight={this.state.countRight} />
+            <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[0]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} countLeft={this.state.countLeft} countRight={this.state.countRight} />
         
   
             <PlayerCard samePlayers={this.state.samePlayers} jordanKobe={this.state.data[40]} jordanKobeInitial={this.state.jordanKobeInitial} data={this.state.data} random={Math.floor(Math.random() * Images.length)} bballNewPlayers={this.state.bballNewPlayers} countLeft={this.state.countLeft} countRight={this.state.countRight} /> 
