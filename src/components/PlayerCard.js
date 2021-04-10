@@ -15,7 +15,15 @@ class PlayerCard extends React.Component {
             console.log('ChildDiv did mount');
 
             let loading = document.getElementsByClassName("loading-container-background")[0];
+
+
+            setTimeout(function(){ 
+            console.log(loading);
             loading.style.display = "none";
+            }, 3000);
+
+            // console.log(loading);
+            // loading.style.display = "none";
 
           }
 
