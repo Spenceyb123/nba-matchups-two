@@ -52,6 +52,15 @@ body{
     height:100%;
     position: relative;
   }
+
+  .loading-container-background {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-image: url(../assets/images/bball_court.jpg);
+    background-size: 100% 100%;
+    z-index: 100;
+  }
   
   .loading-container{
     margin: 0;
@@ -60,6 +69,7 @@ body{
      left: 51%;
      -ms-transform: translate(-50%, -50%);
      transform: translate(-50%, -50%);
+     
   }
   
   .loading-text {

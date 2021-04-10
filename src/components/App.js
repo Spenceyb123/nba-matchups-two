@@ -31,7 +31,8 @@ class App extends React.Component {
             countLeft: 0,
             countRight: 0,
             bballNewPlayers: true, //for jordanKobe
-            samePlayers: false  
+            samePlayers: false,
+            isLoading: true  
          };
     }
 
@@ -69,7 +70,6 @@ class App extends React.Component {
 
       componentDidUpdate() {
           console.log("app updated");
-          console.log("jordanKobe compDidUpdate: " + this.state.jordanKobeInitial);
 
           let playerOneName = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
           let playerTwoName = document.getElementsByClassName("name-container")[1].childNodes[0].textContent;
@@ -707,17 +707,7 @@ class App extends React.Component {
        this.hideMonitor();
 
 
-       console.log("jordanKobe at end playAgain: " + this.state.jordanKobeInitial);
-      
        let self = this; 
-       console.log("count left right before setTimout: " + self.state.countLeft);
-
-
-       setTimeout(function(){ 
-        console.log("count left after playagain clicked with setTimout: " + self.state.countLeft);
-        }, );
-
-        console.log("count left right after setTimout: " + self.state.countLeft);
 
         //make it so ok button in arena monitor is clickable again when game resets
         let confirm = document.getElementsByClassName("confirmButton")[0];
@@ -729,9 +719,7 @@ class App extends React.Component {
 
     closeInfo = () => {
       let info = document.getElementsByClassName("info-component")[0];
-      console.log(info);
-
-      console.log("clicked info x");
+  
       info.style.display = "none";
 
     }
@@ -745,13 +733,26 @@ class App extends React.Component {
 
 
         if (!this.state.data) {
-          return  <div className="loading-container" id="test"> 
-                    <p className="loading-text">Loading...</p>
-                 </div>
+          return  <div className="loading-container-background">
+          <div className="loading-container"> 
+                <p className="loading-text">Loading...</p>
+             </div> 
+        </div>
       }
     
+      
         return (
+
           <div>
+
+            <div className="loading-container-background">
+              <div className="loading-container"> 
+                    <p className="loading-text">Loading...</p>
+                    {console.log("loading...")}
+                 </div> 
+            </div>
+             
+            
             <div className="rotate-screen-please">
               <p className="rotate-please-para">Please rotate your device</p>
             </div>
@@ -798,6 +799,8 @@ class App extends React.Component {
          
           
         )
+      
+       
         
         
       }

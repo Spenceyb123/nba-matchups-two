@@ -13,12 +13,13 @@ class PlayerCard extends React.Component {
     
         componentDidMount () {
             console.log('ChildDiv did mount');
-            
+
+            let loading = document.getElementsByClassName("loading-container-background")[0];
+            loading.style.display = "none";
+
           }
 
         shouldComponentUpdate(nextProps, nextState) {
-
-            console.log("playercard jordanKobe: " + this.props.jordanKobeInitial + " " + "countRight: " + this.props.countRight);
 
             //dont get new players if winnerComp showing 
             let winnerComp = document.getElementsByClassName("winnerComponent")[0];
@@ -86,9 +87,6 @@ class PlayerCard extends React.Component {
             
             const { data, jordanKobe, random } = this.props;
             console.log(data);
-            
-
-         
          
     
            
