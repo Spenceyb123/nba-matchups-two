@@ -3,6 +3,7 @@ import './App.css';
 import * as d3 from 'd3';
 import importedCsvData from '../assets/players.csv';
 import Images from'../Images';
+import LoadingSpinner from "../assets/images/spinning-bball.gif";
 import BasketballButtonStart from "../assets/images/basketball-button-start-game.png";
 import BasketballButton from "../assets/images/basketball-button.png";
 import PlayerCard from './PlayerCard';
@@ -735,7 +736,9 @@ class App extends React.Component {
         if (!this.state.data) {
           return  <div className="loading-container-background">
           <div className="loading-container"> 
+                <img className="spinning-bball" src={LoadingSpinner}/>
                 <p className="loading-text">Loading...</p>
+                {console.log("loading...")}
              </div> 
         </div>
       }
@@ -747,6 +750,7 @@ class App extends React.Component {
 
             <div className="loading-container-background">
               <div className="loading-container"> 
+                    <img className="spinning-bball" src={LoadingSpinner}/>
                     <p className="loading-text">Loading...</p>
                     {console.log("loading...")}
                  </div> 
