@@ -20,10 +20,8 @@ class PlayerCard extends React.Component {
             setTimeout(function(){ 
             console.log(loading);
             loading.style.display = "none";
-            }, 1000);
+            }, 300);
 
-            // console.log(loading);
-            // loading.style.display = "none";
 
           }
 

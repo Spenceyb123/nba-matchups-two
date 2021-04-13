@@ -736,7 +736,9 @@ class App extends React.Component {
         if (!this.state.data) {
           return  <div className="loading-container-background">
           <div className="loading-container"> 
+          <div className="spinning-bball-container">
                 <img className="spinning-bball" src={LoadingSpinner}/>
+                </div>
                 <p className="loading-text">Loading...</p>
                 {console.log("loading...")}
              </div> 
@@ -750,7 +752,9 @@ class App extends React.Component {
 
             <div className="loading-container-background">
               <div className="loading-container"> 
-                    <img className="spinning-bball" src={LoadingSpinner}/>
+                <div className="spinning-bball-container">
+                <img className="spinning-bball" src={LoadingSpinner}/>
+                </div>
                     <p className="loading-text">Loading...</p>
                     {console.log("loading...")}
                  </div> 
