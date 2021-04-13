@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/nba-matchups-two/static/css/main.4f9f1eeb.chunk.css",
-    "main.js": "/nba-matchups-two/static/js/main.4db9de30.chunk.js",
-    "main.js.map": "/nba-matchups-two/static/js/main.4db9de30.chunk.js.map",
+    "main.css": "/nba-matchups-two/static/css/main.24bdc0fd.chunk.css",
+    "main.js": "/nba-matchups-two/static/js/main.fc7af7a8.chunk.js",
+    "main.js.map": "/nba-matchups-two/static/js/main.fc7af7a8.chunk.js.map",
     "runtime-main.js": "/nba-matchups-two/static/js/runtime-main.62c2e714.js",
     "runtime-main.js.map": "/nba-matchups-two/static/js/runtime-main.62c2e714.js.map",
-    "static/js/2.5125fe05.chunk.js": "/nba-matchups-two/static/js/2.5125fe05.chunk.js",
-    "static/js/2.5125fe05.chunk.js.map": "/nba-matchups-two/static/js/2.5125fe05.chunk.js.map",
+    "static/js/2.d52cb002.chunk.js": "/nba-matchups-two/static/js/2.d52cb002.chunk.js",
+    "static/js/2.d52cb002.chunk.js.map": "/nba-matchups-two/static/js/2.d52cb002.chunk.js.map",
     "index.html": "/nba-matchups-two/index.html",
-    "precache-manifest.5b3f6f7ac85d173121483a7e71bf2a5d.js": "/nba-matchups-two/precache-manifest.5b3f6f7ac85d173121483a7e71bf2a5d.js",
+    "precache-manifest.b9cbf5e0ac28cbcdb0cd411084a15b2a.js": "/nba-matchups-two/precache-manifest.b9cbf5e0ac28cbcdb0cd411084a15b2a.js",
     "service-worker.js": "/nba-matchups-two/service-worker.js",
-    "static/css/main.4f9f1eeb.chunk.css.map": "/nba-matchups-two/static/css/main.4f9f1eeb.chunk.css.map",
-    "static/js/2.5125fe05.chunk.js.LICENSE.txt": "/nba-matchups-two/static/js/2.5125fe05.chunk.js.LICENSE.txt",
+    "static/css/main.24bdc0fd.chunk.css.map": "/nba-matchups-two/static/css/main.24bdc0fd.chunk.css.map",
+    "static/js/2.d52cb002.chunk.js.LICENSE.txt": "/nba-matchups-two/static/js/2.d52cb002.chunk.js.LICENSE.txt",
     "static/media/allen01.jpg": "/nba-matchups-two/static/media/allen01.4a37c1bd.jpg",
     "static/media/antetokoumpo19.jpg": "/nba-matchups-two/static/media/antetokoumpo19.919f53cd.jpg",
     "static/media/arenas06.jpg": "/nba-matchups-two/static/media/arenas06.b32f1527.jpg",
@@ -62,6 +62,7 @@
     "static/media/roy09.jpg": "/nba-matchups-two/static/media/roy09.46feef01.jpg",
     "static/media/shaq00.jpg": "/nba-matchups-two/static/media/shaq00.d66b2444.jpg",
     "static/media/shaq94.jpg": "/nba-matchups-two/static/media/shaq94.a39386fe.jpg",
+    "static/media/spinning-bball.gif": "/nba-matchups-two/static/media/spinning-bball.be43233f.gif",
     "static/media/stockton91.jpg": "/nba-matchups-two/static/media/stockton91.e918674b.jpg",
     "static/media/stockton97.jpg": "/nba-matchups-two/static/media/stockton97.ef8666a4.jpg",
     "static/media/stoudemire05.jpg": "/nba-matchups-two/static/media/stoudemire05.8943c0f4.jpg",
@@ -71,8 +72,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.62c2e714.js",
-    "static/js/2.5125fe05.chunk.js",
-    "static/css/main.4f9f1eeb.chunk.css",
-    "static/js/main.4db9de30.chunk.js"
+    "static/js/2.d52cb002.chunk.js",
+    "static/css/main.24bdc0fd.chunk.css",
+    "static/js/main.fc7af7a8.chunk.js"
   ]
 }
