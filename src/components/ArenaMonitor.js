@@ -2,6 +2,8 @@ import React from 'react';
 import './ArenaMonitor.css';
 class ArenaMonitor extends React.Component {
 
+
+
    
     render () {
         
