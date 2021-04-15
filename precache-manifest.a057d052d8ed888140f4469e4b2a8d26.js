@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2b40807c90c099afeaa349120db907a1",
+    "revision": "eebad08ab1c0a195480b14bb63280abe",
     "url": "/nba-matchups-two/index.html"
   },
   {
-    "revision": "545b76014820d212eeec",
-    "url": "/nba-matchups-two/static/css/main.eacc6ca1.chunk.css"
+    "revision": "2be0a8b21e3ec478bb47",
+    "url": "/nba-matchups-two/static/css/main.cd7497be.chunk.css"
   },
   {
-    "revision": "d4016d7e439a36597f63",
-    "url": "/nba-matchups-two/static/js/2.05c72bc6.chunk.js"
+    "revision": "4803952d21fd6588b5fb",
+    "url": "/nba-matchups-two/static/js/2.784e613f.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/nba-matchups-two/static/js/2.05c72bc6.chunk.js.LICENSE.txt"
+    "url": "/nba-matchups-two/static/js/2.784e613f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "545b76014820d212eeec",
-    "url": "/nba-matchups-two/static/js/main.961747d4.chunk.js"
+    "revision": "2be0a8b21e3ec478bb47",
+    "url": "/nba-matchups-two/static/js/main.813fa1a7.chunk.js"
   },
   {
     "revision": "05993bddeaebf94e8351",
