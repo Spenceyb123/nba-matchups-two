@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/nba-matchups-two/static/css/main.24bdc0fd.chunk.css",
-    "main.js": "/nba-matchups-two/static/js/main.fc7af7a8.chunk.js",
-    "main.js.map": "/nba-matchups-two/static/js/main.fc7af7a8.chunk.js.map",
+    "main.css": "/nba-matchups-two/static/css/main.eacc6ca1.chunk.css",
+    "main.js": "/nba-matchups-two/static/js/main.961747d4.chunk.js",
+    "main.js.map": "/nba-matchups-two/static/js/main.961747d4.chunk.js.map",
     "runtime-main.js": "/nba-matchups-two/static/js/runtime-main.62c2e714.js",
     "runtime-main.js.map": "/nba-matchups-two/static/js/runtime-main.62c2e714.js.map",
-    "static/js/2.d52cb002.chunk.js": "/nba-matchups-two/static/js/2.d52cb002.chunk.js",
-    "static/js/2.d52cb002.chunk.js.map": "/nba-matchups-two/static/js/2.d52cb002.chunk.js.map",
+    "static/js/2.05c72bc6.chunk.js": "/nba-matchups-two/static/js/2.05c72bc6.chunk.js",
+    "static/js/2.05c72bc6.chunk.js.map": "/nba-matchups-two/static/js/2.05c72bc6.chunk.js.map",
     "index.html": "/nba-matchups-two/index.html",
-    "precache-manifest.b9cbf5e0ac28cbcdb0cd411084a15b2a.js": "/nba-matchups-two/precache-manifest.b9cbf5e0ac28cbcdb0cd411084a15b2a.js",
+    "precache-manifest.6dc7576f3959b2666da749d6f6136a1a.js": "/nba-matchups-two/precache-manifest.6dc7576f3959b2666da749d6f6136a1a.js",
     "service-worker.js": "/nba-matchups-two/service-worker.js",
-    "static/css/main.24bdc0fd.chunk.css.map": "/nba-matchups-two/static/css/main.24bdc0fd.chunk.css.map",
-    "static/js/2.d52cb002.chunk.js.LICENSE.txt": "/nba-matchups-two/static/js/2.d52cb002.chunk.js.LICENSE.txt",
+    "static/css/main.eacc6ca1.chunk.css.map": "/nba-matchups-two/static/css/main.eacc6ca1.chunk.css.map",
+    "static/js/2.05c72bc6.chunk.js.LICENSE.txt": "/nba-matchups-two/static/js/2.05c72bc6.chunk.js.LICENSE.txt",
     "static/media/allen01.jpg": "/nba-matchups-two/static/media/allen01.4a37c1bd.jpg",
     "static/media/antetokoumpo19.jpg": "/nba-matchups-two/static/media/antetokoumpo19.919f53cd.jpg",
     "static/media/arenas06.jpg": "/nba-matchups-two/static/media/arenas06.b32f1527.jpg",
@@ -72,8 +72,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.62c2e714.js",
-    "static/js/2.d52cb002.chunk.js",
-    "static/css/main.24bdc0fd.chunk.css",
-    "static/js/main.fc7af7a8.chunk.js"
+    "static/js/2.05c72bc6.chunk.js",
+    "static/css/main.eacc6ca1.chunk.css",
+    "static/js/main.961747d4.chunk.js"
   ]
 }
