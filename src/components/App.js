@@ -61,12 +61,10 @@ class App extends React.Component {
          self.setState({ data: Images }); // do I need this with refig???????? YES
          
         }); 
-        console.log('mounted');
        
       }
 
       componentDidUpdate() {
-          console.log("app updated");
 
           let playerOneName = document.getElementsByClassName("name-container")[0].childNodes[0].textContent;
           let playerTwoName = document.getElementsByClassName("name-container")[1].childNodes[0].textContent;
@@ -149,7 +147,6 @@ class App extends React.Component {
                       let arr = [document.getElementsByClassName("stats-paragraph")[randomStat], document.getElementsByClassName("stats-paragraph")[randomStat + 7]];
                     (() => {
 
-                        console.log(arr);
                         
                         for (const a of arr) {
                             a.classList.add("animation");
@@ -585,7 +582,6 @@ class App extends React.Component {
 
       hideMonitor = () => {
 
-        console.log("hide monitor started");
         let monitor = document.getElementsByClassName('customAlert')[0];
         let basketballButton = document.getElementsByClassName('basketball')[0];
 
@@ -686,7 +682,6 @@ class App extends React.Component {
 
 
       render() {
-        console.log("app render");
         
     
 
@@ -698,7 +693,6 @@ class App extends React.Component {
                 <img className="spinning-bball" src={LoadingSpinner}/>
                 </div>
                 <p className="loading-text">Loading...</p>
-                {console.log("loading...")}
              </div> 
         </div>
       }
@@ -714,7 +708,6 @@ class App extends React.Component {
                 <img className="spinning-bball" src={LoadingSpinner}/>
                 </div>
                     <p className="loading-text">Loading...</p>
-                    {console.log("loading...")}
                  </div> 
             </div>
              
