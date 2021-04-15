@@ -12,10 +12,8 @@ class PlayerCard extends React.Component {
     
     
         componentDidMount () {
-            console.log('ChildDiv did mount');
 
             let loading = document.getElementsByClassName("loading-container-background")[0];
-
 
             setTimeout(function(){ 
             console.log(loading);
@@ -73,29 +71,18 @@ class PlayerCard extends React.Component {
                 console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers);
                 return true;
              }
-            console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers); 
             console.log("playerCard didn't update");
             return false;
           
           }
-    
-        componentDidUpdate() {
-            // let self = this;
-            console.log('PlayerCard Updated');
-
-        }
 
         
              
         render(){
- 
-            console.log("PlayerCard render", this.props.jordanKobeInitial);
-            
+             
             const { data, jordanKobe, random } = this.props;
-            console.log(data);
-         
-    
-           
+            
+
             return (
                 <div className="mtg-card-flex-container">
              

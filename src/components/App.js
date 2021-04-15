@@ -13,10 +13,6 @@ import Loser from "./Loser";
 import Info from "./Info";
 
 
-//working on...
-
-
-//3. hide monitor on enter pressed
 
 
 let message;
@@ -89,35 +85,10 @@ class App extends React.Component {
           }
       }
       
-      //trying to get this and eventuall show to work============
-      hide = function (elem) {
-
-        // Give the element a height to change from
-        elem.style.height = elem.scrollHeight + 'px';
-    
-        // Set the height back to 0
-        window.setTimeout(function () {
-            elem.style.height = '0';
-        }, 1);
-    
-        // When the transition is complete, hide it
-        window.setTimeout(function () {
-            elem.classList.remove('is-visible');
-        }, 350);
-    
-    };
     
 
 
       handleBasketballButton =  () => {
-        console.log(this.state.countLeft);
-
-        //testing below...
-        if(this.state.countLeft >= 10) {
-          console.log("bball clicked, count more than 10", document.getElementsByClassName("confirmButton")[0]);
-          // document.getElementsByClassName("confirmButton").disabled = true; 
-           } 
-        //... 
 
         // get playerCard to rerender only if monotir clicked after first bball click
         if ( this.state.jordanKobeInitial < 1 ) {
@@ -126,8 +97,6 @@ class App extends React.Component {
             } );
             return;
         }
-
-        console.log("jordanKobe handleBball: " + this.state.jordanKobeInitial);
 
         if (this.state.bballNewPlayers == false) {
             this.setState( {bballNewPlayers: true,
@@ -620,22 +589,19 @@ class App extends React.Component {
         let monitor = document.getElementsByClassName('customAlert')[0];
         let basketballButton = document.getElementsByClassName('basketball')[0];
 
-            //experimenting below...
+           
         if(this.state.countLeft >= 10 || this.state.countRight >=10) {
 
            this.setState( {jordanKobeInitial : 0} );
               
-          // monitor.classList.add('fade-out');
           basketballButton.classList.remove('fade-out');
           basketballButton.classList.add('fade-in');
           setTimeout(function(){
               monitor.style.display = 'none';
               basketballButton.style.display = 'block';
             }, ); 
-              console.log("score left 10, jordanKobe should be set to 0"); 
-              console.log("jordanKobe count left 10: " + this.state.jordanKobeInitial);
             } 
-            //experimnting above
+           
             
             
             else {
@@ -664,9 +630,6 @@ class App extends React.Component {
             }, 100); 
           //fade bball button back in
         
-  
-          console.log("jordanKobe hideMonitor: " + this.state.jordanKobeInitial);
-          console.log("end of hide monitor function")
             }
 
         
@@ -675,7 +638,6 @@ class App extends React.Component {
 
 
     playAgain = () => {
-      console.log("play again clicked");
 
       let statsParagraphElements = document.querySelectorAll(".stats-paragraph");
           (function _removeClasses() {
@@ -692,10 +654,6 @@ class App extends React.Component {
         bballNewPlayers: true, //for jordanKobe
         samePlayers: false  
        } );
-
-       console.log("play again clicked, jordanKobe should be set to 0"); 
-       console.log("jordanKobe count at beg playAgain: " + this.state.jordanKobeInitial);
-       console.log("count left after playagain clicked: " + this.state.countLeft);
 
        let winnerPopup = document.getElementsByClassName('winnerComponent')[0];
        winnerPopup.style.display = "none";

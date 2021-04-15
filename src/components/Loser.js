@@ -8,7 +8,7 @@ class Loser extends React.Component {
 
 
     render() {
-        console.log("loser comp right after render");
+
         return (
             <div className="loser-container">
         

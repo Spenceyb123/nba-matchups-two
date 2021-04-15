@@ -20,7 +20,6 @@ class ArenaMonitor extends React.Component {
    
   <input type='button' className='confirmButton' onClick={this.props.countLeft >= 10 || this.props.countRight >=10 ? confirm.disabled = true :  this.props.hideMonitor } />
   
-  {/* //come back to this */}
         <div className="score-left">{this.props.countLeft}</div>
         <div className="score-right">{this.props.countRight}</div>
     
