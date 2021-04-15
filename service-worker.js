@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/nba-matchups-two/precache-manifest.a057d052d8ed888140f4469e4b2a8d26.js"
+  "/nba-matchups-two/precache-manifest.6192a80501ec9a4c034ad9c66ea74034.js"
 );
 
 self.addEventListener('message', (event) => {

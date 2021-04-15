@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/nba-matchups-two/static/css/main.cd7497be.chunk.css",
-    "main.js": "/nba-matchups-two/static/js/main.813fa1a7.chunk.js",
-    "main.js.map": "/nba-matchups-two/static/js/main.813fa1a7.chunk.js.map",
+    "main.js": "/nba-matchups-two/static/js/main.9bfebfa8.chunk.js",
+    "main.js.map": "/nba-matchups-two/static/js/main.9bfebfa8.chunk.js.map",
     "runtime-main.js": "/nba-matchups-two/static/js/runtime-main.62c2e714.js",
     "runtime-main.js.map": "/nba-matchups-two/static/js/runtime-main.62c2e714.js.map",
     "static/js/2.784e613f.chunk.js": "/nba-matchups-two/static/js/2.784e613f.chunk.js",
     "static/js/2.784e613f.chunk.js.map": "/nba-matchups-two/static/js/2.784e613f.chunk.js.map",
     "index.html": "/nba-matchups-two/index.html",
-    "precache-manifest.a057d052d8ed888140f4469e4b2a8d26.js": "/nba-matchups-two/precache-manifest.a057d052d8ed888140f4469e4b2a8d26.js",
+    "precache-manifest.6192a80501ec9a4c034ad9c66ea74034.js": "/nba-matchups-two/precache-manifest.6192a80501ec9a4c034ad9c66ea74034.js",
     "service-worker.js": "/nba-matchups-two/service-worker.js",
     "static/css/main.cd7497be.chunk.css.map": "/nba-matchups-two/static/css/main.cd7497be.chunk.css.map",
     "static/js/2.784e613f.chunk.js.LICENSE.txt": "/nba-matchups-two/static/js/2.784e613f.chunk.js.LICENSE.txt",
@@ -74,6 +74,6 @@
     "static/js/runtime-main.62c2e714.js",
     "static/js/2.784e613f.chunk.js",
     "static/css/main.cd7497be.chunk.css",
-    "static/js/main.813fa1a7.chunk.js"
+    "static/js/main.9bfebfa8.chunk.js"
   ]
 }

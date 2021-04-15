@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "eebad08ab1c0a195480b14bb63280abe",
+    "revision": "acd1d15d81d5fc2ad13d23ad8f02cc62",
     "url": "/nba-matchups-two/index.html"
   },
   {
-    "revision": "2be0a8b21e3ec478bb47",
+    "revision": "9cbb46c06e9a68f9d1b9",
     "url": "/nba-matchups-two/static/css/main.cd7497be.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/nba-matchups-two/static/js/2.784e613f.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2be0a8b21e3ec478bb47",
-    "url": "/nba-matchups-two/static/js/main.813fa1a7.chunk.js"
+    "revision": "9cbb46c06e9a68f9d1b9",
+    "url": "/nba-matchups-two/static/js/main.9bfebfa8.chunk.js"
   },
   {
     "revision": "05993bddeaebf94e8351",
