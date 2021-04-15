@@ -16,7 +16,6 @@ class PlayerCard extends React.Component {
             let loading = document.getElementsByClassName("loading-container-background")[0];
 
             setTimeout(function(){ 
-            console.log(loading);
             loading.style.display = "none";
             }, 300);
 
@@ -30,7 +29,6 @@ class PlayerCard extends React.Component {
             
 
             let loserComp = document.getElementsByClassName("loser-component")[0];
-            console.log(loserComp);
             
             if(this.props.countLeft >= 10 && window.getComputedStyle(winnerComp).display === "block") {
               return false;
@@ -56,22 +54,17 @@ class PlayerCard extends React.Component {
               return true;
 
             } else if ( this.props.jordanKobeInitial <1 && this.props.bballNewPlayers == true ) {
-                
-                console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers);
-                
+                                
                 return true;
                 
             } else if (this.props.jordanKobeInitial === 1 && this.props.bballNewPlayers == true) {
 
-                console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers);
                 return true;
             
 
              } else if (nextProps.jordanKobeInitial > this.props.jordanKobeInitial) {
-                console.log(this.props.jordanKobeInitial, this.props.bballNewPlayers);
                 return true;
              }
-            console.log("playerCard didn't update");
             return false;
           
           }
